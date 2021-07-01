@@ -1,0 +1,65 @@
+{
+	"name": "practice-csa",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint"
+	},
+	"dependencies": {
+		"@explorelearning/base-api": "^1.10.19",
+		"@explorelearning/el-authenticator": "^1.10.19",
+		"@explorelearning/platform-data": "^1.10.19",
+		"@explorelearning/platform-rest-api": "^1.10.19",
+		"@explorelearning/urls": "^1.10.15",
+		"@explorelearning/utils": "^1.10.16",
+		"@fortawesome/fontawesome-svg-core": "^1.2.35",
+		"@fortawesome/free-solid-svg-icons": "^5.15.3",
+		"@fortawesome/vue-fontawesome": "^2.0.2",
+		"@kurkle/color": "^0.1.9",
+		"axios": "^0.21.1",
+		"bootstrap": "^4.6.0",
+		"bootstrap-vue": "^2.21.2",
+		"chart.js": "^3.3.2",
+		"chartjs-adapter-luxon": "^1.0.0",
+		"core-js": "^3.6.5",
+		"d3": "^3.5.17",
+		"luxon": "^1.27.0",
+		"vue": "^2.6.12",
+		"vue-router": "^3.2.0",
+		"vuex": "^3.4.0"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "~4.5.0",
+		"@vue/cli-plugin-eslint": "~4.5.0",
+		"@vue/cli-plugin-router": "^4.5.12",
+		"@vue/cli-plugin-vuex": "^4.5.12",
+		"@vue/cli-service": "~4.5.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^6.7.2",
+		"eslint-plugin-vue": "^6.2.2",
+		"node-sass": "^5.0.0",
+		"sass-loader": "^10.1.1",
+		"vue-template-compiler": "^2.6.11"
+	},
+	"eslintConfig": {
+		"root": true,
+		"env": {
+			"node": true
+		},
+		"extends": [
+			"plugin:vue/essential",
+			"eslint:recommended"
+		],
+		"parserOptions": {
+			"parser": "babel-eslint"
+		},
+		"rules": {}
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead"
+	]
+}
