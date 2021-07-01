@@ -38,6 +38,11 @@
                         </div>
                     </template>
 
+                    <template #cell(duration)="{item}">
+                        <div>
+                            {{item.startsOn | toDate}} - {{item.expiresOn | toDate}}
+                        </div>
+                    </template>
                     <template #cell(sourceID)="{value}">
                         <div>
                             {{sourceTypes[value]}}
@@ -80,8 +85,7 @@ export default {
                 {label: "SF Contract" , key: "salesForceContractID"},
                 {label: "Main Institution" 	, key: "mainInstitutionName" },
                 {label: "City/State" , key: "cityState"},//"stateCode", "city"
-                {label: "Starts On" , key: "startsOn"},
-                {label: "Ends On" 	, key: "expiresOn"},
+                {label: "Duration" , key: "duration"},
                 {label: "Source" 	, key: "sourceID"},
                 {label: "Notes", key:"notes" },
             ],
@@ -101,6 +105,11 @@ export default {
             return this.items.length > this.perPage;
         },
     },
+    filters: {
+        toDate: function(value) {
+            return new Date(value).toLocaleDateString();
+        }
+    }
         
     }
 </script>

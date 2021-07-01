@@ -31,7 +31,7 @@
         <b-row>
           <b-col>
             <b-button variant="outline-danger" pill
-              >Merge in external Umbrella</b-button
+              >Merge in users from external Umbrella</b-button
             >
           </b-col>
         </b-row>

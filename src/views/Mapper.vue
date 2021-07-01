@@ -1,7 +1,7 @@
 <template>
   <div>
     <CSACard
-      title="Map Source  Umbrella"
+      title="Select Source  Umbrella"
       :bodyVisible="true"
       :hideCaret="true"
       class="w-100 mt-4 mb-5"
@@ -11,7 +11,7 @@
           <div class="mb-2" >
             <b-icon icon="circle" variant="success"></b-icon> <b-icon icon="arrow-right"></b-icon> <b-icon icon="circle"></b-icon>
           </div>
-          <SelectTenant ></SelectTenant>=
+          <SelectTenant ></SelectTenant>
         </div>
       </template>
     </CSACard>

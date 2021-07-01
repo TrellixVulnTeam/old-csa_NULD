@@ -14,7 +14,14 @@
     <b-collapse v-model="bodyVisible" >
       <b-card-text>
         <slot name="card-body">
-          <b-table striped hover :items="items" class="w-100"></b-table>
+          <b-table striped hover :items="items"
+                                        bordered
+                                        head-variant="dark"
+                                        class="w-100 border" ><template v-slot:head()="data">
+                                            <h5 class="m-0">
+                                                {{ data.label }}
+                                            </h5>
+                                        </template></b-table>
         </slot>
       </b-card-text>
     </b-collapse>

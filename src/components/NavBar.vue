@@ -45,7 +45,7 @@
                             style="vertical-align: sub"
                             icon="card-checklist"
                         ></b-icon>
-                        Rostered Tenants</b-nav-item
+                        Rostered Umbrellas</b-nav-item
                     >
                 </b-navbar-nav>
 

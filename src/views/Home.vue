@@ -28,7 +28,7 @@
 
         <b-nav-item class="text-dark font-weight-bold" active
           ><b-button variant="outline-white" class="text-dark"
-            ><b-icon icon="card-checklist"></b-icon> Rostered Tenants</b-button
+            ><b-icon icon="card-checklist"></b-icon> Rostered Umbrellas</b-button
           ></b-nav-item
         >
         <b-nav-item class="text-dark font-weight-bold" active
@@ -69,6 +69,8 @@
               </template>
             </CSACard>
         </b-col>
+        <b-row>
+        </b-row>
         </b-row>
       </b-container>
     </div>

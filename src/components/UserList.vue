@@ -1,5 +1,31 @@
 <template>
     <div>
+
+
+        <b-input-group
+            class="mt-5 mb-3"
+            prepend="Filter"
+        >
+            <b-form-input
+                v-model="filter"
+            ></b-form-input>
+        </b-input-group>
+
+        <b-dropdown
+            variant="outline-dark"
+            class="mb-3 float-right"
+            :text="'Entries per Page: ' + perPage"
+            size="sm"
+        >
+            <b-dropdown-item
+                v-for="entryOption in [
+                    5, 10, 25, 100,
+                ]"
+                @click="perPage = entryOption"
+                :key="entryOption"
+                >{{ entryOption }}</b-dropdown-item
+            >
+        </b-dropdown>
         <b-table
             :filter="filter"
             selectable
@@ -31,18 +57,18 @@
                 </div>
             </template>
 
-            <template #cell(passwordClear)="{ value }">
+            <template #cell(passwordClear)="{ item, index }">
                 <div>
                     <b-input-group>
                         <b-form-input
                             class="text-right"
-                            type="password"
+                            :type="item.showPassword ? 'text' : 'password'"
                             plaintext
-                            :value="value"
+                            :value="item.passwordClear"
                         ></b-form-input>
 
-                        <b-button variant="white">
-                            <b-icon icon="eye"></b-icon>
+                        <b-button variant="white" @click="showPassword(item, index)" v-if="item.passwordClear">
+                            <b-icon :icon="item.showPassword ? 'eye' : 'eye-slash'"></b-icon>
                         </b-button>
                     </b-input-group>
                 </div>
@@ -50,7 +76,7 @@
 
             <template #cell(email)="{ value }">
                 <div>
-                    <p v-if="value">value</p>
+                    <p v-if="value">{{value}}</p>
                     <b-icon v-else icon="dash"></b-icon>
                 </div>
             </template>
@@ -69,6 +95,12 @@
                         font-scale="1.5"
                         variant="danger"
                     ></b-icon>
+                </div>
+            </template>
+
+            <template #cell(lastLoginOn)="{ value }">
+                <div>
+                    {{ value | toDateTime }}
                 </div>
             </template>
 
@@ -111,6 +143,7 @@
 import usersInUmbrella from "../misc/usersInUmbrella.json";
 import csaTypes from "../misc/csaTypes";
 import Logo from './WrapperComponents/Logo.vue';
+import Vue from 'vue';
 
 export default {
     components: { Logo },
@@ -127,7 +160,7 @@ export default {
                 { label: "Full Name", key: "fullName" },
                 { label: "Institution", key: "institutionName" },
                 { label: "Login ID", key: "loginID" },
-                { label: "Role", key: "roleID" },
+                { label: "Role", key: "roleID", sortable:true },
                 { label: "Username", key: "username" },
                 { label: "Password", key: "passwordClear" },
                 { label: "Student ID", key: "sisUserID" },
@@ -153,6 +186,10 @@ export default {
                 this.fields.push({ label: "LTI ID", key: "ltiUserID" });
             }
         },
+        showPassword(item, index) {
+            Vue.set(this.items,index+(this.perPage* (this.currentPage-1)), {...item, showPassword: !item.showPassword});
+        }
+        
     },
     created() {
         this.onDataFilled();
@@ -161,6 +198,11 @@ export default {
         showPagination() {
             return this.items.length > this.perPage;
         },
+    },
+    filters: {
+        toDateTime: function(value) {
+            return new Date(value).toLocaleString();
+        }
     },
 };
 </script>

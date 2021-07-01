@@ -1,7 +1,7 @@
 <template>
   <div>
     <CSACard
-      title="Map Subscriptions"
+      title="Set Users new Subscription"
       :bodyVisible="true"
       :hideCaret="true"
       class="w-100 mt-4 mb-5"
@@ -15,7 +15,7 @@
             class="w-100 border"
             hover
             :fields="fields"
-            :items="items"
+            :items="[items[0]]"
           >
             <template v-slot:head()="data">
               <h5 class="m-0">
@@ -79,9 +79,10 @@ export default {
       productNames: csaTypes.products,
       licensingTypes: csaTypes.licensingTypeOptions,
       fields: [
-        { key: "SubscriptionID", label: "id" },
-        { key: "SubscriptionName", label: "Subscription Name" },
-        { key: "LicensingTypeID", label: "Type" },
+        { key: "", label: "" },
+        // { key: "SubscriptionID", label: "id" },
+        { key: "SubscriptionName", label: "Users from Subscription" },
+        // { key: "LicensingTypeID", label: "Type" },
         { key: "ProductID", label: "Product" },
         { key: "map", label: "Mapped Destination Subscription" },
       ],
@@ -103,4 +104,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>

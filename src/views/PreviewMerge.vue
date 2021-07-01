@@ -26,6 +26,17 @@
                       <b-button variant="outline-white">
                         <b-icon icon="caret-down"></b-icon
                       ></b-button>
+
+                      <!-- <b-card-text>
+                        <b-table :items="teachers" :fields="teacherFields" 
+                                        bordered
+                                        head-variant="dark"
+                                        class="w-100 border"><template v-slot:head()="data">
+                                            <h5 class="m-0">
+                                                {{ data.label }}
+                                            </h5>
+                                        </template></b-table>
+                      </b-card-text> -->
                     </b-title>
                   </b-card>
                 </b-col>
@@ -35,11 +46,20 @@
                   <b-card class="w-100 shadow mt-3 m-2">
                     <b-title>
                       <h4>Moving 100 Students <b-button variant="outline-dark">Export</b-button> </h4>
-                      
                       <b-button variant="white">
                         <b-icon icon="caret-down"></b-icon
                       ></b-button>
                     </b-title>
+                      <!-- <b-card-text>
+                        <b-table :items="students" :fields="studentFields" 
+                                        bordered
+                                        head-variant="dark"
+                                        class="w-100 border"><template v-slot:head()="data">
+                                            <h5 class="m-0">
+                                                {{ data.label }}
+                                            </h5>
+                                        </template></b-table>
+                      </b-card-text> -->
 
                   </b-card>
                 </b-col>
@@ -68,6 +88,9 @@
 
 <script>
 import CSACard from '../components/WrapperComponents/CSACard.vue'
+// import users from '../misc/usersInUmbrella.json';
+// import csaTypes from '../misc/csaTypes';
+
     export default {
   components: { CSACard },
         props: {
@@ -75,6 +98,29 @@ import CSACard from '../components/WrapperComponents/CSACard.vue'
             type: Boolean,
             default: false
           },
+        },
+        data() {
+          return {
+            // teachers: users.filter(x => x.roleID === csaTypes.loginRoleOptions.Teacher),
+            teacherFields: [
+              "loginID",
+              "firstname",
+              "lastname",
+              "email",
+            ],
+            // students:  users.filter(x => x.roleID === csaTypes.loginRoleOptions.Student),
+            studentFields:[
+              "loginID",
+              "firstname",
+              "lastname",
+              "sisUserID",
+            ],
+            classes: [],
+            classesFields:[],
+
+            
+
+          }
         },
     }
 </script>
