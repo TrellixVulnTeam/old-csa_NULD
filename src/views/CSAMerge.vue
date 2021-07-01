@@ -26,12 +26,13 @@
                       <MapInstitution v-if="tab == 3"></MapInstitution>
                       <div v-if="tab == 4" class="mt-4">
                         <h3>Confirm Merge</h3>
-                      <b-button size="lg" class="my-4" variant="success"><h3>Merge</h3></b-button>
                       <PreviewMerge></PreviewMerge>
                       </div>
                     </div>
                     <b-button size="lg" variant="dark" class="float-left mt-5" @click="tabChanged(-1)">Previous</b-button>
                     <b-button v-if="tab < tabs.length-1" size="lg" variant="dark" class="float-right mt-5" @click="tabChanged(1)">Next</b-button>
+                    <b-button v-if="tab == 4" size="lg" class="float-right mt-5" variant="success">Merge</b-button>
+
                   </div>
                 </template>
 
