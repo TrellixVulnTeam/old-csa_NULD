@@ -16,10 +16,11 @@
                                 <h4>Map Umbrella</h4>
                             </b-col>
                         </b-row>
-                        <b-row class="my-2">
-                            <b-col><strong>Source:</strong> <p v-if="step > 0">Miami B.</p> </b-col>
-                            <b-col><strong>Destination:</strong> Miami A.</b-col>
-                        </b-row>
+
+                        <div class="text-left"><strong>Source:</strong> <p v-if="step > 0" class="d-inline">Miami Middle School <br>
+                        <span class="text-left"><strong>Destination:</strong> Miami A.</span></p>
+                        </div>
+
                     </b-col>
                 </b-row>
                 <hr>
@@ -32,9 +33,18 @@
                             </b-col>
                         </b-row>
                         <div v-if="step > 1">
-                            <b-col>Users from 6 Institutions</b-col>
-                            <b-col><strong>Total Users:</strong>100</b-col>
+                            <div class="text-left"><strong>Total Institutions:</strong> <p class="d-inline">6</p> </div>
+                            <p class="text-left"><strong>Total Users:</strong> 100 <b-button v-b-toggle.x variant="white"><b-icon icon="chevron-down"></b-icon></b-button></p>
 
+                            <b-collapse id="x">
+                                <b-card>
+                                    <b-card-text>
+                                        <b-button variant="outline-dark" class="m-2">Export Teachers</b-button>
+                                        <b-button variant="outline-dark" class="m-2">Export Students</b-button>
+                                        <b-button variant="outline-dark" class="m-2">Export Classes</b-button>
+                                    </b-card-text>
+                                </b-card>
+                            </b-collapse>
 
                         </div>
                         <b-icon v-else icon="dash"></b-icon>
@@ -50,9 +60,10 @@
                             </b-col>
                         </b-row>
                         <div v-if="step > 2">
-
-                            <b-col><strong>Source:</strong> <p v-if="step > 0" class="d-inline">Rodriguez, Antoinette (Grant)</p> </b-col>
-                            <b-col><strong>Destination:</strong> CICERO PREPARATORY ACADEMY</b-col>
+                            
+                            
+                            <div class="text-left"><strong>Source:</strong> <p class="d-inline">Rodriguez, Antoinette (Grant)</p> </div>
+                            <p class="text-left"><strong>Destination:</strong> CICERO PREPARATORY ACADEMY</p>
 
                         </div>
                         <b-icon v-else icon="dash"></b-icon>
@@ -68,9 +79,8 @@
                         </b-row>
                         <div v-if="step > 3">
 
-
-                            <b-col><strong>Source:</strong> <p v-if="step > 0" class="d-inline">CICERO PREPARATORY ACADEMY</p> </b-col>
-                            <b-col><strong>Destination:</strong> CCLB GATEWAY CITIES CHTR SCH</b-col>
+                            <div class="float-left"><strong>Source:</strong> <p v-if="step > 0" class="d-inline">CICERO PREPARATORY ACADEMY</p> </div>
+                            <p class="float-left"><strong>Destination:</strong> CCLB GATEWAY CITIES CHTR SCH</p>
                         </div>
                         <b-icon v-else icon="dash"></b-icon>
                     </b-col>
