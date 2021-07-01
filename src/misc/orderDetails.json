@@ -1,0 +1,34 @@
+{
+	"SFOrder": {
+		"salesforceOrderID": "801040000001KdYAAU",
+		"salesforceOrderNumber": "R9000090",
+		"orderName": "Cook County School Dist 104",
+		"orderOwner": "Daniel Silvers",
+		"orderOwnerEmail": "daniel.silvers@explorelearning.com",
+		"schoolContactName": "Shestine Gesbocker",
+		"schoolContactEmail": "shestine.gesbocker@test.com",
+		"productFamily": "Reflex",
+		"productsString": null,
+		"licensingTypeID": 1,
+		"defaultSeats": 0,
+		"startDate": "2021-09-01T16:00:00Z",
+		"endDate": "2022-08-31T16:00:00Z",
+		"notes": "End date blank. Filled in 12 mos from Order Start Date. Confused about if Order Start Date and Subscription Start Date are actually the same. Previous platform showed Contract Start Date, Subscription Start Date and Contract End Date. I believe it is important to have all 3 .",
+		"sourceID": 0,
+		"institutions": [
+			{
+				"pid": null,
+				"institutionName": "Institution Name",
+				"institutionID": 1234,
+				"subscriptionID": 4567,
+				"subscriberGroupID": 0,
+				"parentInstitutionID": 0,
+				"parentInstitutionName": null,
+				"startDate": null,
+				"expiresOn": null,
+				"expired": false
+			}
+		],
+		"renewal": false
+	}
+}
