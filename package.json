@@ -15,6 +15,7 @@
 		"@explorelearning/urls": "^1.10.15",
 		"@explorelearning/utils": "^1.10.16",
 		"@fortawesome/fontawesome-svg-core": "^1.2.35",
+		"@fortawesome/free-brands-svg-icons": "^5.15.3",
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",
 		"@fortawesome/vue-fontawesome": "^2.0.2",
 		"@kurkle/color": "^0.1.9",
