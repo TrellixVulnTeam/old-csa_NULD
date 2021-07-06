@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <SideTab 
       @on-collapse="recieved"
       :umbrellaId="10142"
@@ -27,17 +27,21 @@
     <div class=" ml-tab-x mr-4" :class="tabClosed ? 'ml-4' : 'ml-tab-x' ">
       <div>
         <div>
-          <div
-            :title="'Umbrella '+ tenantData.tenantID"
-            class="w-100 shadow-none"
-            bodyVisible
-            hideCaret
+          <CSACard
+            title=""
+            class="w-100 shadow-none h-vh mb-5"
+            :bodyVisible="true"
+            :hideCaret="true"
           >
-          <h1 class="display-4 mb-4">Umbrella {{tenantData.tenantID}}</h1>
+          <template #card-body>
             <div>
               
+          <h1 class="display-4 mb-4">Umbrella {{tenantData.tenantID}}</h1>
+            <div>
+              <div class="w-100 h-100 bg-white"></div>
 
             <b-tabs content-class="mt-3" align="center">
+              
               <b-tab title="Umbrella Settings"><ViewEditTenant :tenantData="tenantData"></ViewEditTenant></b-tab>
               <b-tab title="Institutions Hierarchy (30)" active>                  <InstitutionHierarchy></InstitutionHierarchy></b-tab>
               <b-tab title="Users (1000)"><UserList></UserList></b-tab>
@@ -55,7 +59,9 @@
                 </template>
               </CSACard> -->
             </div>
-          </div>
+            </div>
+          </template>
+          </CSACard>
         </div>
         <b-col cols="3">
           <CSACard
@@ -178,5 +184,8 @@ export default {
 }
 div#sidebar-1 {
     margin-top: 85px !important;
+}
+.h-vh {
+  height: 100vh;
 }
 </style>

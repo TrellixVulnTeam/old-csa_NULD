@@ -1,88 +1,8 @@
 <template>
   <div>
-    <b-container>
+    <div class="mx-5">
       <b-row>
-        <b-col>
-          <CSACard
-            title="Batch Jobs"
-            bodyVisible
-            
-          >
-          <template #card-body>
-            <div>
-              <b-container>
-                <b-row>
-                  <b-col>
-                  </b-col>
-                </b-row>
-                <b-row>
-                  <b-col>
-                      <b-table :items="[
-                      {
-                        jobExecutionID: 839376,
-                        dateCreated: '2020-10-10',
-                        exitMessage: 'com.el.library.exceptions.DataAccessException...',
-                      },
-                    ]"></b-table>
-                    <b-pagination
-                    value="1"
-                    total-rows="8"
-                    per-page="5"
-                    aria-controls="my-table"
-                    align="fill"
-                    ></b-pagination>
-                  </b-col>
-                </b-row>
-              </b-container>
-            </div>
-          </template>
-          </CSACard>
-        </b-col>
-        <b-col>
-          <CSACard title="User Quick Search" bodyVisible hideCaret>
-            <template #card-body>
-              <div>
-                <b-input-group prepend="Email:" class="mt-3">
-                  <b-form-input></b-form-input>
-                  <b-input-group-append>
-                    <b-button variant="outline-success">Search</b-button>
-                  </b-input-group-append>
-                </b-input-group>
-
-                <b-input-group prepend="Username:" class="mt-3">
-                  <b-form-input></b-form-input>
-                  <b-input-group-append>
-                    <b-button variant="outline-success">Search</b-button>
-                  </b-input-group-append>
-                </b-input-group>
-              </div>
-            </template>
-          </CSACard>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <CSACard
-            class="w-100"
-            title="Failed Roster Jobs"
-            :items="[
-              {
-                endTime: '2020-11-19T16:07:45.323',
-                isEnabled: 'X',
-                jobExecutionID: 20281,
-                jobType: 'OneRoster',
-                mainInstitutionName: 'INDIAN PRAIRIE SCH DIST 204',
-                message: 'Fatal error - Please contact technical support.',
-                ssoType: 'SAML',
-                startTime: '2020-11-19T16:04:00.05',
-                stepName: 'processOneRosterClasses',
-                tenantID: 9244,
-              },
-            ]"
-          >
-          </CSACard>
-        </b-col>
-        <b-col cols="12">
+        <b-col >
           <!-- <CSACard
             class="w-100"
             title="Last Failed SSO Logs"
@@ -111,9 +31,52 @@
             </template>
           </CSACard>
         </b-col>
+
+        <b-col cols="3">
+          <CSACard title="User Quick Search" bodyVisible hideCaret>
+            <template #card-body>
+              <div>
+                <b-input-group prepend="Email:" class="mt-3">
+                  <b-form-input></b-form-input>
+                  <b-input-group-append>
+                    <b-button variant="outline-success">Search</b-button>
+                  </b-input-group-append>
+                </b-input-group>
+
+                <b-input-group prepend="Username:" class="mt-3">
+                  <b-form-input></b-form-input>
+                  <b-input-group-append>
+                    <b-button variant="outline-success">Search</b-button>
+                  </b-input-group-append>
+                </b-input-group>
+              </div>
+            </template>
+          </CSACard>
+        </b-col>
+      </b-row>
+      <b-row>
       </b-row>
       <b-row>
         <b-col>
+          <CSACard
+            class="w-100"
+            title="Failed Roster Jobs"
+            :items="[
+              {
+                endTime: '2020-11-19T16:07:45.323',
+                isEnabled: 'X',
+                jobExecutionID: 20281,
+                jobType: 'OneRoster',
+                mainInstitutionName: 'INDIAN PRAIRIE SCH DIST 204',
+                message: 'Fatal error - Please contact technical support.',
+                ssoType: 'SAML',
+                startTime: '2020-11-19T16:04:00.05',
+                stepName: 'processOneRosterClasses',
+                tenantID: 9244,
+              },
+            ]"
+          >
+          </CSACard>
         </b-col>
       </b-row>
       <b-row>
@@ -125,7 +88,7 @@
           </CSACard>
         </b-col>
       </b-row>
-    </b-container>
+    </div>
   </div>
 </template>
 

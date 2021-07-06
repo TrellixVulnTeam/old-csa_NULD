@@ -2,7 +2,7 @@
   <div>
     <div class="pb-5">
       <div class="">
-        <h1>Move Users </h1>
+        <h1 class="display-4 ">Move Users </h1>
       </div>
 
       <div style="margin:0 100px;">
@@ -12,11 +12,15 @@
                 <template #card-body>
                   <div>
                   <b-breadcrumb
-                    class="text-center mx-4 mt-3 mb-0 justify-content-center"
-                    style=" font-weight: bold"
-                    :items="tabs"
+                    class="text-center mx-4 mt-3 mb-0 justify-content-center" 
+                    style=" font-weight: bold; background-color: transparent;"
                     @click="tabChanged(1)"
                   >
+                    <b-breadcrumb-item class="mt-2" href="#" v-for="tab in tabs" :key="tab.text" :active="tab.active">
+                      <span class="h5 rounded rounded-pill px-3 font-weight-italics"
+                      :class="{'text-blackblack': !tab.active, 'bg-blue text-white font-weight-bold': tab.active,}"
+                      >{{tab.text}}</span>
+                    </b-breadcrumb-item>
                   </b-breadcrumb>
                     <div class="mx-4">
 
@@ -27,6 +31,7 @@
                       <div v-if="tab == 4" class="mt-4">
                         <h3>Confirm Merge</h3>
                       <PreviewMerge></PreviewMerge>
+                      
                       </div>
                     </div>
                     <b-button size="lg" variant="dark" class="float-left mt-5" @click="tabChanged(-1)">Previous</b-button>
@@ -90,8 +95,17 @@ export default {
 <style lang="scss" scoped>
 @import "../app.scss";
 li.breadcrumb-item.active {
-    text-decoration: underline;
-    text-decoration-color: $el-light-blue;
+    // text-decoration: underline;
+    // text-decoration-color: $el-light-blue;
     color: $el-light-blue;
+}
+.bg-blue {
+  background-color: rgb(54, 162, 235);//$el-light-blue;
+}
+.bg-light-blue {
+  background-color: transparentize($color: rgb(54, 162, 235), $amount: .8);
+}
+.text-blackblack {
+  color: black;
 }
 </style>

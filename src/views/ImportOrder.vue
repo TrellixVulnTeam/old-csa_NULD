@@ -144,7 +144,7 @@
 </b-row> -->
 
       <!-- <b-button v-b-modal.modal-1>Launch demo modal</b-button> -->
-      <b-modal id="modal-1" title="Special actions?">
+      <b-modal id="modal-1" title="Special actions?" >
         <!-- <b-modal id="modal-1" title="Select Umbrella for 'Miami Dolphins'"> -->
         <!-- <b-table :items="[{id:100, name:'Miami Central', PIDs:[123, 124] }, {id:101, name:'Miami High', PIDs:[123, 124] }]">
     </b-table>

@@ -321,7 +321,7 @@ export default {
     return {
       editMode: true,
       licensingTypes: Object.entries(csaTypes.licensingTypeOptions).map((x) => {
-        return { text: x[0], value: x[1] };
+        return { text: x[1], value: x[0] };
       }),
       products: csaTypes.products,
       gracePeriodOptions: csaTypes.gracePeriodOptions,

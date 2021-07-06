@@ -152,11 +152,12 @@ export default {
             type: String,
             default: "",
         },
+        customFields: Array
     },
     data() {
         return {
             items: usersInUmbrella.ArrayList,
-            fields: [
+            defaultFields: [
                 { label: "Full Name", key: "fullName" },
                 { label: "Institution", key: "institutionName" },
                 { label: "Login ID", key: "loginID" },
@@ -178,6 +179,7 @@ export default {
     methods: {
         onRowSelected() {},
         onDataFilled() {
+            if (this.customFields) return;
             if (this.items[0].cleverID) {
                 this.fields.push({ label: "Clever ID", key: "cleverID" });
             } else if (this.items[0].samlUserID) {
@@ -198,6 +200,10 @@ export default {
         showPagination() {
             return this.items.length > this.perPage;
         },
+        fields() {
+            if (this.customFields) return this.customFields;
+            return this.defaultFields;
+        }
     },
     filters: {
         toDateTime: function(value) {

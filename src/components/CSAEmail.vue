@@ -44,7 +44,7 @@
             </b-button-group>
 
             <b-collapse id="collapse-email-preview" class="mt-2">
-                <b-card>
+                <b-card style="width:fit-content">
                     <td v-html="emailPreviewData.htmlContent"></td>
                 </b-card>
             </b-collapse>

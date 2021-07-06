@@ -58,16 +58,32 @@
               hover
               selectable
               :items="[
-                { ParentInstituionName: 'Miami Middle School', nonSiteSubscriptions: 'Grant', umbrellaID: 99},
-                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: 'Trial', umbrellaID: 101},
-                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: 'Teacher Subscription', umbrellaID: 103},
-                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: '-', umbrellaID: 104},
+                { ParentInstituionName: 'Miami Middle School', nonSiteSubscriptions: 'Grant', umbrellaID: 99, SelectUmbrella:false},
+                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: 'Trial', umbrellaID: 101, SelectUmbrella:false},
+                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: 'Teacher Subscription', umbrellaID: 103, SelectUmbrella:false},
+                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: '-', umbrellaID: 104, SelectUmbrella:false},
               ]"
             >
             <template v-slot:head()="data">
               <h5 class="m-0">
                   {{ data.label }}
               </h5>
+            </template>
+              <template
+                  #cell(SelectUmbrella)="{
+                      rowSelected,
+                  }"
+              >
+                  <div>
+                      <b-icon
+                          v-if="
+                              rowSelected
+                          "
+                          font-scale="2"
+                          icon="check"
+                          variant="success"
+                      ></b-icon>
+                  </div>
             </template>
             </b-table>
     </div>

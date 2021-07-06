@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-table hover :items="institutions" :fields="[...institutionFields]">
+    <b-table  hover :items="institutions" :fields="[...institutionFields]">
       <template #cell(actions)="">
         <b-dropdown text="Actions" variant="outline-dark">
           <b-dropdown-item>View/Edit</b-dropdown-item>

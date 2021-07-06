@@ -4,7 +4,11 @@
       <router-link to="/about">About</router-link> -->
 
     <!-- <div class="m-0 p-0 orange-flag shadow-sm"> -->
-    <div class="m-0 p-0 ">
+
+    <div class="diagonal-box w-100 h-100 m-0 p-0 ">
+
+    </div>
+    <div class="m-0 p-0  ">
       <!-- <img
         src="./assets/img/logos/EL_Logo.svg"
         alt=""
@@ -46,6 +50,23 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+	// red: 'rgb(255, 99, 132)',
+	// orange: 'rgb(255, 159, 64)',
+	// yellow: 'rgb(255, 205, 86)',
+	// green: 'rgb(75, 192, 192)',
+	// blue: 'rgb(54, 162, 235)',
+	// purple: 'rgb(153, 102, 255)',
+	// grey: 'rgb(201, 203, 207)'
+.diagonal-box {
+	// background-image: linear-gradient(45deg, #654ea3, #eaafc8);
+  background-color: rgb(255, 159, 64);
+	transform: skewY(-11deg) translateY(-60%);
+
+  position: absolute;
+  z-index:-1
+}
+
 .orange-flag {
   position: absolute;
   height: 400px;

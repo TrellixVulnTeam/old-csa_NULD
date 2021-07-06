@@ -40,20 +40,25 @@
             </template>
             <template #cell(map)="data">
               <div>
-                <b-form-input
+                <!-- <b-form-input
                   list="mappable-subscription-list-id"
                   @input="(id) => (data.map = id)"
                 ></b-form-input>
 
-                <datalist id="mappable-subscription-list-id">
-                  <option
+                <datalist id="mappable-subscription-list-id" >
+                  <option 
                     v-for="option in mappableSubscriptions"
                     :key="option.vaue"
                     :value="option.value"
                   >
-                    {{ option.text }}
+                   <p> {{ option.text }}</p>
                   </option>
-                </datalist>
+                </datalist> -->
+                <b-form-select v-model="data.map" class="mb-3">
+
+                  <b-form-select-option :value="option.value"  v-for="option in mappableSubscriptions"
+                    :key="option.vaue">{{ option.text }}</b-form-select-option>
+                </b-form-select>
               </div>
             </template>
           </b-table>
@@ -96,9 +101,15 @@ export default {
           (x) => !this.items.some((s) => s.SubscriptionID == x.SubscriptionID)
         )
         .map((y) => {
-          return { value: y.SubscriptionID, text: y.SubscriptionName };
+          return { value: y.SubscriptionID, text: this.subscriptionOption(y) };
         });
     },
+  },
+  methods: {
+      subscriptionOption(subscription) {
+          const mainSubsInfo =  `${subscription.SubscriptionName} (${csaTypes.products[subscription.ProductID]} - ${csaTypes.licensingTypeOptions[subscription.LicensingTypeID]})`
+          return subscription.SalesForceContractID ?  `${mainSubsInfo} SalesForce Contract ID: ${subscription.SalesForceContractID}` : mainSubsInfo;
+      }
   },
 };
 </script>
