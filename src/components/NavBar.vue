@@ -1,58 +1,42 @@
 <template>
-    <div id="nav" class="mx-0 mt-0 px-0 pt-0" style="margin-top: 0; z-index: 1">
+    <div>
         <b-navbar
-            style="height: 85px"
-            class="m-0 shadow"
+            class="m-0 shadow csa-navbar"
             toggleable="lg"
-            type="light"
-            variant="white"
+            variant="el-light-dark"
+            type="dark"
         >
-            <b-navbar-brand href="#/ordersboard"
-                ><h1 class="m-0 display-4">CSA</h1></b-navbar-brand
-            >
+            <b-navbar-brand>
+                <h1 class="m-0 display-4 mr-3">CSA</h1>
+            </b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse" v-if="jti"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav v-if="jti">
+                <!-- Nav Buttons -->
                 <b-navbar-nav>
-                    <b-nav-item class="mr-3" href="#/orders"
+                    <b-nav-item
+                        v-for="(item, index) in items"
+                        :key="index"
+                        class="mr-4"
+                        @click="changeNav(index)"
+                        :href="item.url"
+                        :class="item.active ? 'active-nav' : 'inactive-nav'"
+                        :active="item.active"
                         ><b-icon
-                            class="mr-1"
+                            :icon="item.icon"
+                            class="mr-2"
                             style="vertical-align: sub"
-                            icon="file-earmark-ruled"
-                        ></b-icon>
-                        Orders</b-nav-item
-                    >
-                    <b-nav-item class="mr-3" href="#/techboard"
-                        ><b-icon
-                            class="mr-1"
-                            style="vertical-align: sub"
-                            icon="life-preserver"
-                        ></b-icon>
-                        Support</b-nav-item
-                    >
-                    <b-nav-item class="mr-3" href="#/misc"
-                        ><b-icon
-                            class="mr-1"
-                            style="vertical-align: sub"
-                            icon="shop"
-                        ></b-icon>
-                        Marketing</b-nav-item
-                    >
-                    <b-nav-item class="mr-3" href="#"
-                        ><b-icon
-                            class="mr-1"
-                            style="vertical-align: sub"
-                            icon="card-checklist"
-                        ></b-icon>
-                        Rostered Umbrellas</b-nav-item
-                    >
+                            font-scale="1.5"
+                        ></b-icon
+                        >{{ item.name }}
+                    </b-nav-item>
                 </b-navbar-nav>
 
-                <!-- Right aligned nav items -->
+                <!-- Nav Search Bar -->
                 <b-navbar-nav class="ml-auto">
                     <b-nav-form>
-                        <b-input-group class="ml-tab-x" style="width: 60%">
+                        <b-input-group class="ml-tab-x">
                             <b-nav-item-dropdown
                                 no-caret
                                 right
@@ -60,7 +44,10 @@
                                 title="History"
                             >
                                 <template #button-content>
-                                    <b-icon icon="clock"></b-icon>
+                                    <b-icon
+                                        font-scale="1.5"
+                                        icon="clock"
+                                    ></b-icon>
                                 </template>
                                 <b-dropdown-item
                                     href="#"
@@ -74,23 +61,24 @@
                             <b-form-input
                                 placeholder="Super Search"
                                 v-model="searchInput"
-                                style="border-radius: 50px"
+                                style="border-radius: 3px; height: auto"
                             ></b-form-input>
                             <b-input-group-append>
                                 <!-- <b-button style="border-radius:50px;" size="sm" text="Button" variant="white"><b-icon icon="search"></b-icon><b-icon icon="caret-down"></b-icon></b-button> -->
                                 <b-dropdown
-                                    variant="white"
+                                    variant="dark"
                                     right
                                     style="
-                                        border-radius: 50px;
+                                        border-radius: 3px;
                                         margin-top: 0px !important;
                                     "
-                                    size="sm"
                                     id="dropdown-1"
-                                    class="m-md-2"
                                 >
                                     <template #button-content>
-                                        <b-icon icon="search"></b-icon>
+                                        <b-icon
+                                            icon="search"
+                                            variant="light"
+                                        ></b-icon>
                                     </template>
 
                                     <b-dropdown-item @click="searchClicked"
@@ -175,9 +163,10 @@
                         </b-input-group>
                     </b-nav-form>
 
-                    <b-nav-item @click="logoutButtonClicked"
-                        >Log out</b-nav-item
-                    >
+                    <b-nav-item @click="logoutButtonClicked" class="ml-4 mr-2">
+                        Log out
+                        <b-icon icon="box-arrow-in-right"></b-icon
+                    ></b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
@@ -191,6 +180,33 @@
             return {
                 searchInput: "",
                 pastSearchResults: [],
+                items: [
+                    {
+                        name: "Orders",
+                        icon: "file-earmark-ruled",
+                        url: "/#/orders",
+                        active: true,
+                    },
+                    {
+                        name: "Support",
+                        icon: "life-preserver",
+                        url: "/#/tech",
+                        active: false,
+                    },
+                    {
+                        name: "Marketing",
+                        icon: "shop",
+                        url: "/#/orders",
+                        active: false,
+                    },
+                    {
+                        name: "Rostering",
+                        icon: "clipboard-check",
+                        url: "/#/roserting",
+                        active: false,
+                    },
+                ],
+                activeIndex: 0,
             };
         },
         methods: {
@@ -204,9 +220,36 @@
             searchClicked() {
                 this.pastSearchResults.push(this.searchInput);
             },
+            changeNav(index) {
+                this.items[this.activeIndex].active = false;
+                this.activeIndex = index;
+                this.items[this.activeIndex].active = true;
+            },
         },
         computed: {
             ...mapState("platform/app", ["jti"]),
         },
     };
 </script>
+
+<style lang="scss">
+    .csa-navbar {
+        position: fixed;
+        height: 90px;
+        width: 100%;
+        z-index: 100;
+    }
+
+    .active-nav {
+        font-weight: bold;
+        border-bottom: 1px solid white;
+    }
+
+    .inactive-nav {
+        font-weight: bold;
+    }
+
+    .logout {
+        color: white !important;
+    }
+</style>

@@ -1,16 +1,11 @@
 // Define variable defaults
-$orange: #fab958;
-$el-black: #1c1c1c;
-$blue: #142248;
-
-
-$el-Orange: #fab958 ;
-$el-yellow: #fad573 ;
+$el-orange: #fab958 ;
 $el-dark-orange: #f78c00 ;
-$el-dark: #1c1c1c ;
+$el-yellow: #fad573 ;
 $el-light-dark: #242424;
-$el-dark-blue: #142248;
+$el-dark: #1c1c1c ;
 $el-light-blue: #385498 ;
+$el-dark-blue: #142248;
 $el-purple: #3f2e7e ;
 $el-salmon: #ea6a52;
 
@@ -19,16 +14,17 @@ $navBarWidth: 250px;
 // $body-bg: $el-black;
 // $body-color: white;
 // $dark: $orange;
-// $theme-colors: (
-//   "primary":    $primary,
-//   "secondary":  $secondary,
-//   "success":    $success,
-//   "info":       $info,
-//   "warning":    $warning,
-//   "danger":     $danger,
-//   "light":      $light,
-//   "dark":       $dark
-// );
+$theme-colors: (
+	"el-orange": $el-orange,
+	"el-dark-orange": $el-dark-orange,
+	"el-yellow": $el-yellow,
+	"el-light-dark": $el-light-dark,
+	"el-dark": $el-dark,
+	"el-light-blue": $el-light-blue,
+	"el-dark-blue": $el-dark-blue,
+	"el-purple": $el-purple,
+	"el-salmon": $el-salmon
+);
 
 // Then import Bootstrap an BootstrapVue SCSS files (order is important)
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
