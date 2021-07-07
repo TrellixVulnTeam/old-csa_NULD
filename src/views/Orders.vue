@@ -245,7 +245,7 @@
 
         <!-- Order Modal -->
 
-        <b-modal size="xl" ref="order-modal" no-close-on-backdrop no-footer>
+        <b-modal size="xl" ref="order-modal" no-close-on-backdrop no-footer content-class="my-modal-content">
             <template #modal-title>
                 <h1 class="m-0 ml-3">
                     Order # {{ selectedOrderDetails.salesforceOrderNumber }}
@@ -366,8 +366,10 @@
                 </b-row>
             </b-container>
             <template #modal-footer="{ cancel }">
-                <div>
-                    <b-button @click="cancel()">Cancel</b-button>
+                <div class="w-100">
+                    <b-button v-if="provisionProcess > 1" @click="provisionProcess = provisionProcess -1" variant="outline-dark" class="float-left mx-2">Prev</b-button>
+                    <b-button  v-if="provisionProcess < 3" @click="provisionProcess = provisionProcess +1" class="mx-2  float-right">Next</b-button>
+                    <b-button @click="cancel()" class="mx-2 float-right" variant="white">Close</b-button>
                 </div>
             </template>
         </b-modal>
@@ -404,7 +406,7 @@
         },
         data() {
             return {
-                provisionProcess: 3,
+                provisionProcess: 1,
                 possibleUmbrellas: [
                     {
                         umbrellaID: 100,
@@ -596,16 +598,22 @@
         },
     };
 </script>
-<style lang="scss" scoped>
-    .modal-dialog {
-        width: 100%;
-        margin: 0;
-    }
+<style lang="scss">
+    // .modal-dialog {
+    //     width: 100%;
+    //     margin: 0;
+    // }
     p {
         margin: 0;
     }
     .maxheight-vh {
         // height: 100vh;
+    }
+
+    .my-modal-content {
+
+        width: max-content !important;
+        padding-right: 20px;
     }
 </style>
 

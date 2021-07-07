@@ -30,8 +30,8 @@
 <hr>
         <b-row>
           <b-col>
-            <b-button variant="outline-danger" pill
-              >Merge in users from external Umbrella</b-button
+            <b-button variant="outline-danger" class="mx-3" pill
+              >Merge in Users from External Umbrella</b-button
             >
           </b-col>
         </b-row>

@@ -33,7 +33,8 @@
             bodyVisible
             hideCaret
           >
-          <h1 class="display-4 mb-4">Umbrella {{tenantData.tenantID}}</h1>
+          <h1 class="display-4 ">Umbrella </h1>
+          <h3 class="text-secondary mb-4">Parent Institution: SAN LUIS COASTAL UNIF SCH DIST	</h3>
             <div>
               
 
