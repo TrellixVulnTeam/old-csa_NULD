@@ -10,11 +10,21 @@
             </b-input-group-append>
         </b-input-group>
         <b-table
-            class="shadow-sm ml-5 w-auto"
+            class="shadow-sm ml-5 w-100 border"
             :fields="fields"
             :items="items"
             per-page="5"
+            striped
+            hover
+            bordered
+            head-variant="dark"
             >
+
+            <template v-slot:head()="data">
+                <h5 class="m-0">
+                    {{ data.label }}
+                </h5>
+            </template>
             <template #cell(actions)="">
                 <b-dropdown text="Actions" variant="outline-dark">
                 <b-dropdown-item>View/Edit</b-dropdown-item>

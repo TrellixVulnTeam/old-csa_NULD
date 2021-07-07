@@ -1,6 +1,15 @@
 <template>
   <div>
-    <b-table hover :items="institutions" :fields="[...institutionFields]">
+    <b-table hover :items="institutions" :fields="[...institutionFields]" 
+            striped
+            bordered
+            head-variant="dark"
+            class="w-100 border">
+            <template v-slot:head()="data">
+                <h5 class="m-0">
+                    {{ data.label }}
+                </h5>
+            </template>
       <template #cell(actions)="">
         <b-dropdown text="Actions" variant="outline-dark">
           <b-dropdown-item>View/Edit</b-dropdown-item>
@@ -65,7 +74,7 @@ export default {
         "stateCode",
         "postalCode",
         "actions",
-        "externalSchoolID",
+        // "externalSchoolID",
         "ShowSubInstitutions",
         // 'show_details'
       ],
