@@ -60,7 +60,6 @@
                         sortable: true,
                     },
                     { key: "Delivered", tdClass: "align-middle", sortable: true },
-                    { key: "Opened", tdClass: "align-middle", sortable: true },
                 ],
                 emailData: EmailData,
                 perPage: 10,
