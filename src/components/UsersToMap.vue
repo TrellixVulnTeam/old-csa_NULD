@@ -195,7 +195,7 @@
                             header-border-variant="white"
                             class="pb-0"
                         >
-                            <h3 class="m-0">Users Selected</h3>
+                            <h3 class="m-0">Users Selected (115)</h3>
                         </b-card-header>
                         <b-collapse v-model="usersSelectedVisible">
                             <b-card-body>

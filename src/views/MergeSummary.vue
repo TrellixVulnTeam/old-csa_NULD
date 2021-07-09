@@ -14,7 +14,11 @@
                     <b-row>
                         <b-col>
                             <b-row>
-                                <b-col cols="3" class="text-center">
+                                <b-col
+                                    cols="3"
+                                    class="text-center"
+                                    style="border-right: 1px solid silver"
+                                >
                                     <strong>Source</strong>
                                 </b-col>
                                 <b-col class="text-center">
@@ -23,13 +27,20 @@
                                 </b-col>
                             </b-row>
                             <b-row>
-                                <b-col cols="3"></b-col>
+                                <b-col
+                                    cols="3"
+                                    style="border-right: 1px solid silver"
+                                ></b-col>
                                 <b-col
                                     ><b-icon icon="arrow-down"></b-icon
                                 ></b-col>
                             </b-row>
                             <b-row>
-                                <b-col cols="3" class="text-center">
+                                <b-col
+                                    cols="3"
+                                    class="text-center"
+                                    style="border-right: 1px solid silver"
+                                >
                                     <strong>Destination</strong>
                                 </b-col>
                                 <b-col class="text-center">
@@ -46,13 +57,19 @@
                 <b-col>
                     <b-row>
                         <b-col>
-                            <h4>Users to Move</h4>
+                            <h4>Users</h4>
                         </b-col>
                     </b-row>
-                    <div v-if="step > 1">
-                        <b-col>Users from 6 Institutions</b-col>
-                        <b-col><strong>Total Users:</strong>100</b-col>
-                    </div>
+                    <b-row v-if="step > 1">
+                        <b-col>
+                            <p class="display-4 m-0">6</p>
+                            <p class="m-0">Institutions</p>
+                        </b-col>
+                        <b-col>
+                            <p class="display-4 m-0">254</p>
+                            <p class="m-0">Total Users</p>
+                        </b-col>
+                    </b-row>
                     <b-icon v-else icon="dash"></b-icon>
                 </b-col>
             </b-row>
@@ -61,22 +78,46 @@
                 <b-col>
                     <b-row>
                         <b-col>
-                            <h4>Map Users new Subscription</h4>
+                            <h4>Subscriptions</h4>
                         </b-col>
                     </b-row>
-                    <div v-if="step > 2">
+                    <b-row>
                         <b-col
-                            ><strong>Source:</strong>
-                            <p v-if="step > 0" class="d-inline">
+                            cols="3"
+                            class="text-center"
+                            style="border-right: 1px solid silver"
+                        >
+                            <strong>Source</strong>
+                        </b-col>
+                        <b-col class="text-center">
+                            <p v-if="step > 2" class="m-0">
                                 Rodriguez, Antoinette (Grant)
                             </p>
+                            <p v-else class="m-0">-</p>
                         </b-col>
+                    </b-row>
+                    <b-row>
                         <b-col
-                            ><strong>Destination:</strong> CICERO PREPARATORY
-                            ACADEMY</b-col
+                            cols="3"
+                            style="border-right: 1px solid silver"
+                        ></b-col>
+                        <b-col><b-icon icon="arrow-down"></b-icon></b-col>
+                    </b-row>
+                    <b-row>
+                        <b-col
+                            cols="3"
+                            class="text-center"
+                            style="border-right: 1px solid silver"
                         >
-                    </div>
-                    <b-icon v-else icon="dash"></b-icon>
+                            <strong>Destination</strong>
+                        </b-col>
+                        <b-col class="text-center">
+                            <p v-if="step > 2" class="m-0">
+                                CICERO PREPARATORY ACADEMY
+                            </p>
+                            <p v-else class="m-0">-</p>
+                        </b-col>
+                    </b-row>
                 </b-col>
             </b-row>
             <hr />

@@ -1,5 +1,41 @@
 <template>
-    <b-card> </b-card>
+    <b-card class="card shadow">
+        <b-card-header
+            header-bg-variant="white"
+            header-border-variant="white"
+            class="p-0"
+        >
+            <h3 class="m-0">Select Destination Subscription</h3>
+        </b-card-header>
+        <b-card-body>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="addBySubLabel"
+                        >Subscription</span
+                    >
+                </div>
+
+                <b-form-input
+                    list="mappable-subscription-list-id"
+                    @input="subscriptionSelected"
+                    style="
+                        border-bottom-right-radius: 3px;
+                        border-top-right-radius: 3px;
+                    "
+                ></b-form-input>
+
+                <datalist id="mappable-subscription-list-id">
+                    <option
+                        v-for="(option, index) in subscriptionsToMap"
+                        :key="index"
+                    >
+                        {{ option.SubscriptionID }}:
+                        {{ option.SubscriptionName }}
+                    </option>
+                </datalist>
+            </div>
+        </b-card-body>
+    </b-card>
 </template>
 
 <script>
