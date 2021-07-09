@@ -14,8 +14,8 @@
                             <slot name="card-body">
                                 <b-row>
                                     <b-col>
-                                        <h2 class="text-left m-0">
-                                            <b-button
+                                        <h2 class="text-left mt-1 m-0">
+                                            <b-button class="mb-1"
                                                 @click="
                                                     collapseDraft =
                                                         !collapseDraft
@@ -32,7 +32,14 @@
                                                     class="m-0 p-0"
                                                 ></b-icon
                                             ></b-button>
-                                            Draft Orders ({{ items.length }})
+                                            Draft Orders 
+                                    <b-icon
+                                        icon="file-earmark-ruled"
+                                        class="ml-0 mb-1"
+                                        style="vertical-align: sub"
+                                    ></b-icon>
+                                    
+                                    ({{ items.length }})
                                         </h2>
                                     </b-col>
                                     <b-col>
@@ -129,9 +136,9 @@
                         <b-card-text>
                             <slot name="card-body">
                                 <b-row>
-                                    <b-col>
+                                    <b-col class=" mt-1">
                                         <h2 class="text-left m-0">
-                                            <b-button
+                                            <b-button  class="mb-1"
                                                 @click="
                                                     collapseEmail =
                                                         !collapseEmail
@@ -148,7 +155,14 @@
                                                     class="m-0 p-0"
                                                 ></b-icon
                                             ></b-button>
-                                            Emails Sent ({{ emailData.length }})
+                                            Emails Sent 
+                                            
+                                        <font-awesome-icon
+                                            class="h3 mb-0"
+                                            icon="paper-plane"
+                                        ></font-awesome-icon>
+                                        
+                                            ({{ emailData.length }})
                                         </h2>
                                         <b-collapse
                                             id="emailHistory"
@@ -189,7 +203,7 @@
                         </b-card-text>
                     </b-card>
                 </b-col>
-                <b-col cols="3" class=" ">
+                <b-col cols="auto" class=" ">
                     <b-card class="maxheight-vh shadow my-4 mr-4 p-0" >
                         <b-card-text>
                             <h2>Overview</h2>
@@ -370,7 +384,7 @@
             <template #modal-footer="{ cancel }">
                 <div class="w-100">
                     <b-button v-if="provisionProcess > 1" @click="provisionProcess = provisionProcess -1" variant="outline-dark" class="float-left mx-2">Prev</b-button>
-                    <b-button  v-if="provisionProcess < 3" @click="provisionProcess = provisionProcess +1" class="mx-2  float-right">Next</b-button>
+                    <b-button  v-if="provisionProcess < 3 " @click="provisionProcess = provisionProcess +1" class="mx-2  float-right">Next</b-button>
                     <b-button @click="cancel()" class="mx-2 float-right" variant="white">Close</b-button>
                 </div>
             </template>

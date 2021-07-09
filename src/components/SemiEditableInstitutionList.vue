@@ -1,8 +1,15 @@
 <template>
     <div>
-        <CSACard class=" mt-4" title="Institutions" style="min-width:fit-content; width:100%">
+        <CSACard class=" mt-4" title="" style="min-width:fit-content; width:100%">
+            <template #card-title>
+                    
+                <h3 class="d-inline  mb-0"><font-awesome-icon
+                                            class="text-green h3 mb-0"
+                                            icon="school"
+                                        ></font-awesome-icon>
+                                        Institutions</h3>
+            </template>
             <template #card-body>
-
         <b-table
             :fields="institutionFields"
             :items="items"

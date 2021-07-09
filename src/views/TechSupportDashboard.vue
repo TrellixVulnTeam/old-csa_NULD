@@ -2,26 +2,12 @@
   <div>
     <div class="mx-5">
       <b-row>
+        <b-col>
+            <h1 class="mb-3 text-center">Tech Support Dashboard</h1>
+        </b-col>
+      </b-row>
+      <b-row>
         <b-col >
-          <!-- <CSACard
-            class="w-100"
-            title="Last Failed SSO Logs"
-            :items="[
-              {
-                TenantID: 37310,
-                ProductID: 1,
-                SsoType: 'LTI',
-                FriendlyMessage:
-                  'We were unable to get a valid user id from the request.  Please contact your portal Administrator.',
-                Message:
-                  'Could not map LtiUserIDField{name=\'lis_person_sourcedid\', custom=false} to ltiResource',
-                LogType: 'ERROR',
-                CreatedOn: '2021-01-21 11:12:20.8818160',
-                LogID: 1048,
-              },
-            ]"
-          >
-          </CSACard> -->
 
           <CSACard class="w-100" title="SSO Summary" bodyVisible>
             <template #card-body>

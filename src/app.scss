@@ -3,15 +3,14 @@ $orange: #fab958;
 $el-black: #1c1c1c;
 $blue: #142248;
 
-
-$el-Orange: #fab958 ;
-$el-yellow: #fad573 ;
-$el-dark-orange: #f78c00 ;
-$el-dark: #1c1c1c ;
+$el-Orange: #fab958;
+$el-yellow: #fad573;
+$el-dark-orange: #f78c00;
+$el-dark: #1c1c1c;
 $el-light-dark: #242424;
 $el-dark-blue: #142248;
-$el-light-blue: #385498 ;
-$el-purple: #3f2e7e ;
+$el-light-blue: #385498;
+$el-purple: #3f2e7e;
 $el-salmon: #ea6a52;
 
 // $navBarWidth: 235px;
@@ -30,6 +29,28 @@ $navBarWidth: 250px;
 //   "dark":       $dark
 // );
 
+$jscharBlue: rgb(54, 162, 235);
+$jscharRed: rgb(255, 99, 132);
+$jscharOrange: rgb(255, 159, 64);
+$jscharYellow: rgb(255, 205, 86);
+$jscharGreen: rgb(75, 192, 192);
+$jscharBlue: rgb(54, 162, 235);
+$jscharPurple: rgb(153, 102, 255);
+$jschargrey: rgb(201, 203, 207);
+
+.text-blue {
+    color: $jscharBlue;
+}
+.text-orange {
+    color: $jscharOrange;
+}
+.text-purple {
+    color: $jscharPurple;
+}
+.text-green {
+    color: $jscharGreen;
+}
+
 // Then import Bootstrap an BootstrapVue SCSS files (order is important)
-@import 'node_modules/bootstrap/scss/bootstrap.scss';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";

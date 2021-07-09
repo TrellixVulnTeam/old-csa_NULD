@@ -1,6 +1,6 @@
 <template>
   <b-card class="m-2 shadow card">
-    <b-card-title>
+    <b-card-title class="mb-0">
 
       <slot name="card-title">      
         {{title}}

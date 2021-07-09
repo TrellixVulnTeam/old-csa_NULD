@@ -195,7 +195,7 @@
                                 <b-row>
                                     <b-col>
                                         <font-awesome-icon
-                                            class="text-salmon h3"
+                                            class="text-green h3"
                                             icon="school"
                                         ></font-awesome-icon>
                                         <h4>Institutions Mapped</h4>
@@ -234,25 +234,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "../app.scss";
-$jscharBlue: rgb(54, 162, 235);
-$jscharRed: rgb(255, 99, 132);
-$jscharOrange: rgb(255, 159, 64);
-$jscharYellow: rgb(255, 205, 86);
-$jscharGreen: rgb(75, 192, 192);
-$jscharBlue: rgb(54, 162, 235);
-$jscharPurple: rgb(153, 102, 255);
-$jschargrey: rgb(201, 203, 207);
-
-.text-blue {
-    color: $jscharBlue;
-}
-.text-orange {
-    color: $jscharOrange;
-}
-.text-purple {
-    color: $jscharPurple;
-}
-.text-salmon {
-    color: $jscharGreen;
-}
 </style>

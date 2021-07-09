@@ -1,5 +1,8 @@
 <template>
   <div>
+        <div>
+            <h1 class="mb-3 text-center">Marketing Dashboard</h1>
+        </div>
     <b-container>
       <b-row>
         <b-col>

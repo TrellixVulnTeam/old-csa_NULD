@@ -14,39 +14,24 @@
             <b-navbar-toggle target="nav-collapse" v-if="jti"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav v-if="jti">
+
                 <b-navbar-nav>
-                    <b-nav-item class="mr-3" href="#/orders"
+                    <b-nav-item
+                        v-for="(item, index) in items"
+                        :key="index"
+                        class="mr-4"
+                        @click="changeNav(index)"
+                        :href="item.url"
+                        :class="item.active ? 'active-nav' : ''"
+                        :active="item.active"
                         ><b-icon
-                            class="mr-1"
+                            :icon="item.icon"
+                            class="mr-2"
                             style="vertical-align: sub"
-                            icon="file-earmark-ruled"
-                        ></b-icon>
-                        Orders</b-nav-item
-                    >
-                    <b-nav-item class="mr-3" href="#/techboard"
-                        ><b-icon
-                            class="mr-1"
-                            style="vertical-align: sub"
-                            icon="life-preserver"
-                        ></b-icon>
-                        Support</b-nav-item
-                    >
-                    <b-nav-item class="mr-3" href="#/misc"
-                        ><b-icon
-                            class="mr-1"
-                            style="vertical-align: sub"
-                            icon="shop"
-                        ></b-icon>
-                        Marketing</b-nav-item
-                    >
-                    <b-nav-item class="mr-3" href="#"
-                        ><b-icon
-                            class="mr-1"
-                            style="vertical-align: sub"
-                            icon="card-checklist"
-                        ></b-icon>
-                        Rostered Umbrellas</b-nav-item
-                    >
+                            font-scale="1.5"
+                        ></b-icon
+                        >{{ item.name }}
+                    </b-nav-item>
                 </b-navbar-nav>
 
                 <!-- Right aligned nav items -->
@@ -191,6 +176,33 @@
             return {
                 searchInput: "",
                 pastSearchResults: [],
+                items: [
+                    {
+                        name: "Orders",
+                        icon: "file-earmark-ruled",
+                        url: "/#/orders",
+                        active: true,
+                    },
+                    {
+                        name: "Support",
+                        icon: "life-preserver",
+                        url: "/#/techboard",
+                        active: false,
+                    },
+                    {
+                        name: "Marketing",
+                        icon: "shop",
+                        url: "/#/misc",
+                        active: false,
+                    },
+                    {
+                        name: "Rostering",
+                        icon: "clipboard-check",
+                        url: "/#/rostering",
+                        active: false,
+                    },
+                ],
+                activeIndex: 0,
             };
         },
         methods: {
@@ -204,9 +216,19 @@
             searchClicked() {
                 this.pastSearchResults.push(this.searchInput);
             },
+            changeNav(index) {
+                this.items[this.activeIndex].active = false;
+                this.activeIndex = index;
+                this.items[this.activeIndex].active = true;
+            },
         },
         computed: {
             ...mapState("platform/app", ["jti"]),
         },
     };
 </script>
+<style lang="scss" >
+.active-nav > a {
+    color: #f78c00 !important;
+}
+</style>
