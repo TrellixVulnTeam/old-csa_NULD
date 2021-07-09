@@ -31,8 +31,7 @@
                                                 cols="3"
                                                 class="text-center"
                                                 style="
-                                                    border-right: 1px solid
-                                                        silver;
+                                                    border-right: 1px solid silver;
                                                 "
                                             >
                                                 <strong>Source</strong>
@@ -48,8 +47,7 @@
                                             <b-col
                                                 cols="3"
                                                 style="
-                                                    border-right: 1px solid
-                                                        silver;
+                                                    border-right: 1px solid silver;
                                                 "
                                             ></b-col>
                                             <b-col
@@ -63,8 +61,7 @@
                                                 cols="3"
                                                 class="text-center"
                                                 style="
-                                                    border-right: 1px solid
-                                                        silver;
+                                                    border-right: 1px solid silver;
                                                 "
                                             >
                                                 <strong>Destination</strong>
@@ -146,12 +143,6 @@
                                         <h4>Map Users New Subscription</h4>
                                     </b-col>
                                 </b-row>
-                                <div v-if="step > 2">
-                                    <!-- 
-                                <div class="text-left"><strong class="d-block">Source:</strong> <p v-if="step > 0" class="d-inline ml-3">Rodriguez, Antoinette (Grant) <br></p>
-                                <p class="mt-2"><span class="text-left"><strong class="d-block">Destination:</strong><span class="ml-3"> CICERO PREPARATORY ACADEMY</span></span></p>
-                                </div> -->
-
                                     <b-row class="mt-2">
                                         <b-col
                                             cols="3"
@@ -197,8 +188,6 @@
                                             <p v-else class="m-0">-</p>
                                         </b-col>
                                     </b-row>
-                                </div>
-                                <b-icon v-else icon="dash"></b-icon>
                             </b-col>
                         </b-row>
                         <b-row class="my-3">
