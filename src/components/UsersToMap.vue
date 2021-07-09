@@ -309,7 +309,7 @@
             </b-row>
             <b-row>
                 <b-col>
-                    <CSACard title="Preview Users Selected" class="w-100">
+                    <CSACard title="Preview Users Selected (160)" class="w-100">
                         <template #card-body>
                             <div>
                                 <UserList

@@ -58,10 +58,10 @@
               hover
               selectable
               :items="[
-                { ParentInstituionName: 'Miami Middle School', nonSiteSubscriptions: 'Grant', umbrellaID: 99, SelectUmbrella:false},
-                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: 'Trial', umbrellaID: 101, SelectUmbrella:false},
-                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: 'Teacher Subscription', umbrellaID: 103, SelectUmbrella:false},
-                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: '-', umbrellaID: 104, SelectUmbrella:false},
+                { ParentInstituionName: 'Miami Middle School', nonSiteSubscriptions: 'Grant',  SelectUmbrella:false},
+                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: 'Trial',  SelectUmbrella:false},
+                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: 'Teacher Subscription',  SelectUmbrella:false},
+                { ParentInstituionName: 'Miami High', nonSiteSubscriptions: '-',  SelectUmbrella:false},
               ]"
             >
             <template v-slot:head()="data">

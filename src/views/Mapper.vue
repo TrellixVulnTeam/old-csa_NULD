@@ -1,62 +1,82 @@
 <template>
-  <div>
-    <CSACard
-      title="Select Source  Umbrella"
-      :bodyVisible="true"
-      :hideCaret="true"
-      class="w-100 mt-4 mb-5"
-    >
-      <template #card-body>
-        <div>
-          <div class="mb-2" >
-            <b-icon icon="circle" variant="success"></b-icon> <b-icon icon="arrow-right"></b-icon> <b-icon icon="circle"></b-icon>
-          </div>
-          <SelectTenant ></SelectTenant>
-        </div>
-      </template>
-    </CSACard>
+    <div class="mt-4">
+        <h2 class="pb-2">Select Umbrella</h2>
 
-    <CSACard 
-      title="Destination Umbrella"
-      :bodyVisible="true"
-      :hideCaret="true"
-      class="w-100"
-    >
-      <template #card-body>
-        <div>
-          <div class="mb-2" >
-            <b-icon icon="circle"></b-icon> <b-icon icon="arrow-right"></b-icon> <b-icon icon="circle"  variant="success"></b-icon>
-          </div>
-          <b-card>
-          <b-container>
-            <b-row>
-              <b-col>
-                <p><strong>Parent Institution Name:</strong> Miami A.</p>
-              </b-col>
-              <b-col>
-                <p><strong>Umbrella ID:</strong>10419</p>
-              </b-col>
-            </b-row>
-          </b-container>
-          </b-card>
-        </div>
-      </template>
-    </CSACard>
-  </div>
+        <CSACard
+            title=""
+            :bodyVisible="true"
+            :hideCaret="true"
+            class="w-100 px-4"
+        >
+            <template #card-body>
+                <b-row class="w-100">
+                    <b-col class="p-0"  cols="6">
+                        <h3 class="mb-3">Source Umbrella</h3>
+                    </b-col>
+                    <b-col cols="2"></b-col>
+                    <b-col  cols="4">
+                        <h3 class="mb-3">Destination Umbrella</h3>
+                    </b-col>
+                </b-row>
+                <b-row class="w-100 mt-3" align-v="center" align-h="center">
+                    <b-col class="p-0" cols="6">
+                        <SelectTenant></SelectTenant>
+                    </b-col>
+                    <b-col cols="2">
+                        <p>
+                            <b-icon
+                                icon="arrow-right"
+                                variant="el-light-dark"
+                                font-scale="4"
+                            ></b-icon>
+                        </p>
+                    </b-col>
+                    <b-col class="p-0" cols="4">
+                        <div class="mb-5">
+
+                            <h3 class=" mb-3">Miami High</h3>
+                            <b-row>
+                              <b-col>
+
+                            <strong>Non Site Subscriptions</strong>
+                            <p>Teacher Subscription</p>
+                              </b-col>
+                            </b-row>
+                        </div>
+                    </b-col>
+                </b-row>
+            </template>
+        </CSACard>
+    </div>
 </template>
 
 <script>
 import CSACard from "../components/WrapperComponents/CSACard.vue";
 import SelectTenant from "../components/SelectTenant.vue";
 export default {
-  components: { SelectTenant, CSACard },
-  data() {
-    return {
-      types: {Umbrella: 'Umbrella'}
-    }
-  },
+    components: { SelectTenant, CSACard },
+    data() {
+        return {
+            types: { Umbrella: "Umbrella" },
+        };
+    },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@media only screen and (min-width: 768px) {
+    .is-table-row {
+        display: table;
+    }
+    .is-table-row [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+
+.is-table-row .box {
+    background: none;
+    position: static;
+}
 </style>
