@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="text-center">Order Summary</h2>
-    <b-text>
+    <b-card-text>
       <b-row class="my-4">
         <b-col>
           <strong>Order Name</strong>
@@ -119,7 +119,7 @@
           >
         </b-col>
       </b-row>
-    </b-text>
+    </b-card-text>
   </div>
 </template>
 
