@@ -262,7 +262,7 @@
                     </b-col>
                     <b-col cols="7" v-if="provisionProcess === 1">
                         <b-card title="Order Umbrella" class="mb-4">
-                            <b-text>
+                            <b-card-text>
                                 <b-row>
                                     <b-col>
                                         <strong>Parent Institution Name</strong>
@@ -289,7 +289,7 @@
                                         ></b-button>
                                     </b-col>
                                 </b-row>
-                            </b-text>
+                            </b-card-text>
                         </b-card>
 
                         <small class="text-secondary"
@@ -337,7 +337,7 @@
                         >
                     </b-col>
                     <b-col cols="7" v-if="provisionProcess === 2">
-                        <h2 class="text-center mt-3">Order item 1 of 2</h2>
+                        <h2 class="text-center mt-3">Product 1 of 2</h2>
                         <Logo
                             style="height: 40px"
                             class="d-block mx-auto mt-3"
@@ -349,6 +349,8 @@
                             class="mt-3"
                             :subscriptionData="subscriptionData"
                         ></ViewEditSubscription>
+
+                        <SemiEditableInstitutionList></SemiEditableInstitutionList>
                     </b-col>
                     <b-col cols="7" v-if="provisionProcess === 3">
                         <h2 class="text-center mt-3">
@@ -387,7 +389,9 @@
     import csaTypes from "../misc/csaTypes";
     import OrderSummary from "../components/Order/OrderSummary.vue";
     import EmailHistory from "../components/EmailHistory.vue";
+    import SemiEditableInstitutionList from  "../components/SemiEditableInstitutionList.vue";
     import EmailData from "../misc/emails.json";
+
     export default {
         components: {
             Logo,
@@ -397,6 +401,7 @@
             CSAEmail,
             OrderSummary,
             EmailHistory,
+            SemiEditableInstitutionList,
         },
         props: {
             bodyVisible: {
@@ -611,8 +616,8 @@
     }
 
     .my-modal-content {
-
-        width: max-content !important;
+        width: 55vw !important;
+        // width: max-content !important;
         padding-right: 20px;
     }
 </style>

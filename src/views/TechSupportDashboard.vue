@@ -55,27 +55,17 @@
         </b-col>
       </b-row>
       <b-row>
-      </b-row>
-      <b-row>
         <b-col>
           <CSACard
             class="w-100"
             title="Failed Roster Jobs"
-            :items="[
-              {
-                endTime: '2020-11-19T16:07:45.323',
-                isEnabled: 'X',
-                jobExecutionID: 20281,
-                jobType: 'OneRoster',
-                mainInstitutionName: 'INDIAN PRAIRIE SCH DIST 204',
-                message: 'Fatal error - Please contact technical support.',
-                ssoType: 'SAML',
-                startTime: '2020-11-19T16:04:00.05',
-                stepName: 'processOneRosterClasses',
-                tenantID: 9244,
-              },
-            ]"
+
           >
+          <template #card-body>
+            <div>
+              <RosterJobSummary></RosterJobSummary>
+            </div>
+          </template>
           </CSACard>
         </b-col>
       </b-row>
@@ -96,11 +86,13 @@
 import AuditLog from "../components/AuditLog.vue";
 import CSACard from "../components/WrapperComponents/CSACard";
 import SSOChart from '../components/SSOChart.vue';
+import RosterJobSummary from '../components/RosterJobSummary.vue';
 export default {
   components: {
     CSACard,
     AuditLog,
-    SSOChart
+    SSOChart,
+    RosterJobSummary
   },
 };
 </script>

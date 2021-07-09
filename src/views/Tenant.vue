@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <SideTab 
       @on-collapse="recieved"
       :umbrellaId="10142"
@@ -33,15 +33,16 @@
             :bodyVisible="true"
             :hideCaret="true"
           >
+          <h1 class="display-4 ">Umbrella </h1>
+          <h3 class="text-secondary mb-4">Parent Institution: SAN LUIS COASTAL UNIF SCH DIST	</h3>
           <template #card-body>
             <div>
-              
+
           <h1 class="display-4 mb-4">Umbrella {{tenantData.tenantID}}</h1>
             <div>
               <div class="w-100 h-100 bg-white"></div>
 
             <b-tabs content-class="mt-3" align="center">
-              
               <b-tab title="Umbrella Settings"><ViewEditTenant :tenantData="tenantData"></ViewEditTenant></b-tab>
               <b-tab title="Institutions Hierarchy (30)" active>                  <InstitutionHierarchy></InstitutionHierarchy></b-tab>
               <b-tab title="Users (1000)"><UserList></UserList></b-tab>

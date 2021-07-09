@@ -20,7 +20,7 @@
         datasets: [
             {
                 label: "Order Products",
-                data: numbers(NUMBER_CFG),
+                data: numbers(NUMBER_CFG).map(Math.round),
                 backgroundColor: [fraxPurple, reflexGreen, s4usYellow, gizmoGreen],
             },
         ],
