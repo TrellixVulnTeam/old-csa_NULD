@@ -7,7 +7,7 @@
 
 <script>
     import Chart from "chart.js/auto";
-    import { CHART_COLORS, transparentize } from "../../misc/JSChartUtils";
+    import { CHART_COLORS,  } from "../../misc/JSChartUtils";
 
     const DATA_COUNT = 12;
     const labels = [];
@@ -18,33 +18,30 @@
     const datapoints = [0, 20, 80, 90, 100, 102, 110];
     const datapoints2 = [20, 40, 80, 90, 120, 130, 140];
     const days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
+        "Su",
+        "M",
+        "T",
+        "W",
+        "Th",
+        "F",
+        "Sa",
     ];
     const data = {
-        labels: days
-            .slice(new Date().getUTCDay() + 1)
-            .concat(days.slice(0, new Date().getUTCDay() + 1)),
+        labels: days,
         datasets: [
             {
-                label: "Orders filled",
+                label: "Renewal Orders",
                 data: datapoints,
-                borderColor: CHART_COLORS.green,
-                backgroundColor: transparentize(CHART_COLORS.green),
+                borderColor: CHART_COLORS.blue,
+                backgroundColor: (CHART_COLORS.blue),
                 fill: true,
                 cubicInterpolationMode: "monotone",
                 tension: 0.4,
             },
             {
-                label: "Total Orders",
+                label: "New Orders",
                 data: datapoints2,
-                borderColor: CHART_COLORS.purple,
-                backgroundColor: transparentize(CHART_COLORS.purple),
+                backgroundColor: (CHART_COLORS.green),
                 fill: true,
                 cubicInterpolationMode: "monotone",
                 tension: 0.4,
@@ -52,31 +49,45 @@
         ],
     };
     const config = {
-        type: "line",
+        type: "bar",
         data: data,
         options: {
             responsive: true,
             plugins: {},
-            interaction: {
-                intersect: false,
-            },
             scales: {
                 x: {
-                    display: true,
-                    title: {
-                        display: true,
-                    },
-                },
-                y: {
-                    display: true,
-                    // title: {
-                    //     display: true,
-                    //     text: "# Orders",
-                    // },
-                    suggestedMin: 0,
-                    suggestedMax: 200,
-                },
-            },
+                    ticks: {
+                        font: function(context) {
+                            console.log(context);
+                            if (context.index === new Date().getDay()) {
+                                return {
+                                    weight: 'bold',
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+            // interaction: {
+            //     intersect: false,
+            // },
+            // scales: {
+            //     x: {
+            //         display: true,
+            //         title: {
+            //             display: true,
+            //         },
+            //     },
+            //     y: {
+            //         display: true,
+            //         // title: {
+            //         //     display: true,
+            //         //     text: "# Orders",
+            //         // },
+            //         suggestedMin: 0,
+            //         suggestedMax: 200,
+            //     },
+            // },
         },
     };
     export default {

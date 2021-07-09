@@ -219,22 +219,6 @@
                                             </h4>
                                         </b-alert>
                                     </div>
-                                    <div class="p-2">
-                                        <p class="m-0 font-weight-bold">
-                                            Today
-                                        </p>
-                                        <b-row>
-                                            <b-col>
-                                                <p class="display-4 m-0">13</p>
-                                                <p>New</p>
-                                            </b-col>
-                                            <b-col>
-                                                <p class="display-4 m-0">5</p>
-                                                <p>Renewal</p>
-                                            </b-col>
-                                        </b-row>
-                                    </div>
-                                    <hr class="my-1" />
                                     <OrderChart></OrderChart>
                                 </b-card-text>
                             </b-card>
