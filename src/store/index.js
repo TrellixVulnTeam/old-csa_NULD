@@ -28,4 +28,5 @@ const platData = new PlatformData.State({
   }
 })
 platData.register(store);
+
 export default store;

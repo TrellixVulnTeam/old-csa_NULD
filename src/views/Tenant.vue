@@ -67,8 +67,9 @@
                                                 ></font-awesome-icon
                                                 ><span class="ml-2">Institutions Hierarchy (30)</span>
                                             </template>
-                                            <InstitutionHierarchy></InstitutionHierarchy
-                                        ></b-tab>
+                                            <InstitutionHierarchy></InstitutionHierarchy>
+                                            <b-button class="my-4" variant="success">Create New Institution</b-button>
+                                        </b-tab>
                                         <b-tab
                                             >
                                             <template #title>
@@ -78,7 +79,9 @@
                                         ></font-awesome-icon>
                                             <span class="ml-2">Users (1000)</span>
                                             </template><UserList></UserList
-                                        ></b-tab>
+                                        >
+                                            <b-button class="my-4" variant="success">Create New User</b-button>
+                                        </b-tab>
                                         <b-tab 
                                             >
                                             <template #title>
@@ -88,8 +91,10 @@
                                         ></font-awesome-icon>
                                                 <span class="ml-2">Subscriptions (9)</span>
                                             </template>
-                                            <Subscriptionlist></Subscriptionlist
-                                        ></b-tab>
+                                            <Subscriptionlist></Subscriptionlist>
+                                            <b-button class="my-4" variant="success">Create New Subscription</b-button>
+
+                                        </b-tab>
                                     </b-tabs>
                                     <!-- <CSACard class="mt-5" title="Institution Hierarchy" bodyVisible hideCaret>
                 <template #card-title>

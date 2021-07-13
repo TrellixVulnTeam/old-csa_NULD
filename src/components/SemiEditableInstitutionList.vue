@@ -7,10 +7,11 @@
                                             class="text-green h3 mb-0"
                                             icon="school"
                                         ></font-awesome-icon>
-                                        Institutions</h3>
+                                        Verify Institutions ({{items.length}})</h3>
             </template>
             <template #card-body>
         <b-table
+            :sticky-header="true"
             :fields="institutionFields"
             :items="items"
             striped
@@ -56,7 +57,7 @@ import CSACard from './WrapperComponents/CSACard.vue';
                 }).slice(0, 5),
                 institutionFields: [
                     { key: 'institutionName', label: 'Institution Name'},
-                    { key: 'institutionID', label: 'ID'},
+                    { key: 'pid', label: 'PID'},
                     { key: 'institutionTypeID', label: 'Type'},
                     { key: 'city', label: 'City'},
                     { key: 'stateCode', label: 'State Code'},

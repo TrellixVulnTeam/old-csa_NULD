@@ -297,7 +297,7 @@
         </b-row>
       <b-row class="mt-3">
         <b-col>
-          <b-button :variant="isCreate ? 'success' : 'primary'" @click="editButtonClicked" class="float-right">
+          <b-button v-if="!hideEditButton" :variant="isCreate ? 'success' : 'primary'" @click="editButtonClicked" class="float-right">
             {{ saveButtonTitle }}
           </b-button>
         </b-col>
@@ -316,6 +316,9 @@ export default {
       type: Object,
       default: null,
     },
+    hideEditButton: {
+      type: Boolean
+    }
   },
   data() {
     return {

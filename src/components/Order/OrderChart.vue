@@ -31,7 +31,7 @@
         datasets: [
             {
                 label: "Renewal Orders",
-                data: datapoints,
+                data: datapoints.map((v, i) => i <=  new Date().getDay() ? v: 0),
                 borderColor: CHART_COLORS.blue,
                 backgroundColor: (CHART_COLORS.blue),
                 fill: true,
@@ -40,7 +40,7 @@
             },
             {
                 label: "New Orders",
-                data: datapoints2,
+                data: datapoints2.map((v, i) => i <=  new Date().getDay() && i != 0 ? v: 0),
                 backgroundColor: (CHART_COLORS.green),
                 fill: true,
                 cubicInterpolationMode: "monotone",

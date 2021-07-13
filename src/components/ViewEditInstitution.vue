@@ -12,7 +12,7 @@
                     >
                     <b-form-input
                     id="name-input"
-                    v-model="institutionData.name"
+                    v-model="institutionData.institutionName"
                     type="text"
                     :plaintext="!editMode" :readonly="!editMode"
                     placeholder=""
