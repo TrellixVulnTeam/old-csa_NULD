@@ -147,7 +147,7 @@
                             <b-form-checkbox  switch class="float-left ml-5" size="md">Subscribed</b-form-checkbox>
                           </b-col>
                           <b-col class="ml-0 pl-0 text-left" v-if="!isCreate">
-                            <div class="d-inline ">
+                            <div class="d-inline " style="vertical-align: sub;">
 
                             Email Validated 
                             <b-icon  v-if="userData.validated" variant="success" icon="check-circle-fill"></b-icon>
@@ -158,7 +158,7 @@
 
                           </b-col>
                         </b-row>
-                        <b-row v-if="!isCreate">
+                        <b-row v-if="!isCreate" class="mt-3">
                           <b-col>
                             <b-form-group
                             label="Created On:"
@@ -232,19 +232,20 @@
                             <p class=" " style="width:max-content">
                             <b-button class="m-0 ml-5 mt-2" variant="outline-dark">Unlink SSO/Roster from User</b-button>
 
-                            <span class="ml-2" for="">Enabled: </span>
+                            <span class="ml-3 mr-1">Enabled: </span>
+                            LTI
                             <b-icon  v-if="userData.ltiUserID" variant="success" icon="check-circle"></b-icon>
                             <b-icon v-else variant="danger" icon="x-circle"></b-icon>
-                            LTI
 
+                            <span class="ml-3 mr-1">SAML</span>
                             <b-icon  v-if="userData.samlUserID" variant="success" icon="check-circle"></b-icon>
                             <b-icon v-else variant="danger" icon="x-circle"></b-icon>
-                            SAML
+                            <span class="ml-3 mr-1">Clever</span>
                             <b-icon  v-if="userData.cleverID" variant="success" icon="check-circle"></b-icon>
                             <b-icon v-else variant="danger" icon="x-circle"></b-icon>
-                            Clever
+                            <span class="ml-3 mr-1">Roster</span>
                             <b-icon  v-if="userData.isRosterEnabled" variant="success" icon="check-circle"></b-icon>
-                            <b-icon v-else variant="danger" icon="x-circle"></b-icon> Roster
+                            <b-icon v-else variant="danger" icon="x-circle"></b-icon> 
                             </p>
                               </b-col>
                               <b-col class="m-0 p-0">
@@ -288,7 +289,7 @@
                             <b-button variant="outline-primary">Login to Frax</b-button>
                             <b-button variant="outline-primary">Login to Reflex</b-button>
                           </b-button-group>
-                          <b-button class="mx-2 float-right" variant="success" @click="editMode = !editMode">{{editMode ? 'Save': 'Update User'}}</b-button>
+                          <b-button size="lg" class="mx-2 float-right" variant="success" @click="editMode = !editMode">{{editMode ? 'Save': 'Update User'}}</b-button>
                           
                         </div>
                       </b-container>

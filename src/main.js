@@ -2,10 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUserSecret, faUmbrella, faUsers, faSchool, faBookReader, faCloudDownloadAlt, faPaperPlane, faCog, faAddressBook } from '@fortawesome/free-solid-svg-icons'
+import { faUserSecret, faUmbrella, faUsers, faSchool, faBookReader, faCloudDownloadAlt, faPaperPlane, faCog, faAddressBook, faChalkboard, faArrowAltCircleRight, faTicketAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUserSecret, faUmbrella, faUsers, faSchool, faBookReader, faCloudDownloadAlt, faPaperPlane, faCog, faAddressBook)
+library.add(faUserSecret, faUmbrella, faUsers, faSchool, faBookReader, faCloudDownloadAlt, faPaperPlane, faCog, faAddressBook, faChalkboard, faArrowAltCircleRight, faTicketAlt)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
