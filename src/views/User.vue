@@ -7,7 +7,12 @@
 
         <div class="ml-tab mr-4" :class="tabClosed ? 'ml-4' : 'ml-tab-x'">
             <div>
-                <h1 class="display-4">User</h1>
+                <h1 class="display-4">
+                <font-awesome-icon
+                    class="text-white h1"
+                    icon="users"
+                ></font-awesome-icon>
+                    User</h1>
 
                 <CSACard
                     title=""
@@ -29,10 +34,45 @@
                                                 >User Settings</span
                                             >
                                         </template>
-                                        <ViewEditUser
-                                            class="mt-5"
-                                            :userData="userData"
-                                        ></ViewEditUser>
+                                        
+                                        <b-row>
+                                            <b-col>
+                                                <ViewEditUser
+                                                    class="mt-5"
+                                                    :userData="userData"
+                                                ></ViewEditUser>
+                                            </b-col>
+                                            <b-col cols="3">
+
+                                        <b-card>
+                                            <b-card-text>
+                                                <h2>Active Subscriptions:</h2>
+                                                <div class="mt-2">
+
+                                                <b-button variant="white" class="m-2"
+                                                >                                                    
+                                                <Logo product="reflex" class="h2 mr-2"></Logo>
+                                                MIAMI JEFFERSON
+                                                <b-icon icon="arrow-right-circle"></b-icon>
+                                                </b-button>
+                                                </div>
+                                                <hr>
+                                                <h2>Login Status</h2>
+                                                <p>Last Login: 2 days ago</p>
+                                                <p v-b-tooltip.hover title="Sessions <5secs, user could be having login issues.">Last Login session length: <span class="text-danger"> 3sec</span>
+
+                                                <font-awesome-icon  
+                                                    class="text-danger ml-2"
+                                                    icon="exclamation-circle"
+                                                ></font-awesome-icon>
+                                                </p>
+                                                <b-button  variant="outline-dark"><span class="mr-2">View Login History</span>
+                                                <b-icon  icon="arrow-right-circle"></b-icon>
+                                                </b-button>
+                                            </b-card-text>
+                                        </b-card>
+                                            </b-col>
+                                        </b-row>
                                     </b-tab>
                                     <b-tab>
                                         <template #title>
@@ -68,17 +108,27 @@
                                             ></font-awesome-icon
                                             ><span class="ml-2">Classes</span>
                                         </template>
+                                        <UserClassesTable></UserClassesTable>
                                     </b-tab>
                                     <b-tab>
-                                        <template #title>
-                                            <font-awesome-icon
-                                                class="text-success h3"
-                                                icon="arrow-alt-circle-right"
-                                            ></font-awesome-icon
-                                            ><span class="ml-2"
-                                                >Login History</span
-                                            >
+                                        <template #title >
+                                            <div  v-b-tooltip.hover title="Potential Login Issues">
+
+                                                <font-awesome-icon
+                                                    class="text-success h3"
+                                                    icon="arrow-alt-circle-right"
+                                                ></font-awesome-icon
+                                                ><span class="ml-2"
+                                                    >Login History</span
+                                                >
+                                                
+                                                <font-awesome-icon
+                                                    class="text-danger ml-2"
+                                                    icon="exclamation-circle"
+                                                ></font-awesome-icon>
+                                            </div>
                                         </template>
+                                        <UserLoginHistory></UserLoginHistory>
                                     </b-tab>
                                     <b-tab>
                                         <template #title>
@@ -91,6 +141,7 @@
                                                 >RegCode History</span
                                             >
                                         </template>
+                                        <RegCodeHistory></RegCodeHistory>
                                     </b-tab>
                                     <b-tab>
                                         <template #title>
@@ -134,6 +185,10 @@ import ViewEditUser from "../components/ViewEditUser.vue";
 import Subscriptionlist from "../components/Subscriptionlist.vue";
 import UserList from '../components/UserList.vue';
 import EmailHistory from '../components/EmailHistory.vue';
+import UserClassesTable from '../components/userTables/UserClassesTable.vue';
+import RegCodeHistory from '../components/userTables/RegCodeHistory.vue';
+import UserLoginHistory from '../components/userTables/UserLoginHistory.vue';
+import Logo from '../components/WrapperComponents/Logo.vue';
 
 export default {
     components: {
@@ -143,6 +198,10 @@ export default {
         Subscriptionlist,
         UserList,
         EmailHistory,
+        UserClassesTable,
+        RegCodeHistory,
+        UserLoginHistory,
+        Logo,
     },
 
     data() {

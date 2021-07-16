@@ -183,7 +183,7 @@
                             >
                             <b-form-input
                             id="last-login-input"
-                            :value="userData.lastLogin ? new Date(userData.lastLogin).toLocaleString() : 'Never'"
+                            :value="userData.lastLoginOn ? new Date(userData.lastLoginOn).toLocaleString() : 'Never'"
                             type="text"
                             placeholder="Never"
                             plaintext readonly
@@ -232,7 +232,7 @@
                             <p class=" " style="width:max-content">
                             <b-button class="m-0 ml-5 mt-2" variant="outline-dark">Unlink SSO/Roster from User</b-button>
 
-                            <span class="ml-3 mr-1">Enabled: </span>
+                            <span class="ml-3 mr-1">Linked: </span>
                             LTI
                             <b-icon  v-if="userData.ltiUserID" variant="success" icon="check-circle"></b-icon>
                             <b-icon v-else variant="danger" icon="x-circle"></b-icon>

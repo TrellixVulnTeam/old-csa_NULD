@@ -27,7 +27,13 @@
         <div class="ml-tab-x mr-4" :class="tabClosed ? 'ml-4' : 'ml-tab-x'">
             <div>
                 <div>
+                    
                     <h1 class="display-4">
+                        <font-awesome-icon
+                        
+                            class="text-white"
+                            icon="umbrella"
+                        ></font-awesome-icon>
                         Umbrella
                     </h1>
                     <CSACard

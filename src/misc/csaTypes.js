@@ -64,6 +64,49 @@ products: {
     101: "ExploreLearning",
 },
 
+
+displayRegCodeTypeID : function(regTypeID){
+    if(regTypeID == 1){ return "Trial Registration"; }
+    else if(regTypeID == 2){ return "Grant Registration"; }
+    else if(regTypeID == 3){ return "Online Purchase Registration"; }
+    else if(regTypeID == 4){ return "Order Fulfillment"; }
+    else if(regTypeID == 5){ return "Teacher Invite"; }
+    else if(regTypeID == 6){ return "Parent Invite"; }
+    else if(regTypeID == 7){ return "Password Reset"; }
+    else if(regTypeID == 8){ return "Admin Invite"; }
+    else if(regTypeID == 9){ return "Admin Registration"; }
+    else if(regTypeID == 10){ return "Apply for Grant"; }
+    else if(regTypeID == 11){ return "Email Validation"; }
+    else { return "ERROR!"; }
+},
+timeSince(value, secondDateToSubtract = null) {
+    const date = new Date(value);
+    const seconds = Math.floor(((secondDateToSubtract ? new Date(secondDateToSubtract) : new Date()) - date) / 1000);
+
+    let interval = Math.floor(seconds / 31536000);
+
+    if (interval > 1) {
+      return interval + " years";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 1) {
+      return interval + " months";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 1) {
+      return interval + " days";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 1) {
+      return interval + " hours";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 1) {
+      return interval + " minutes";
+    }
+    return Math.floor(seconds) + " seconds";
+  },
+  
 ssoLtiFieldOptions: [ "user_id", "lis_person_sourcedid", "Custom" ],
 
 promoCodeTypeOptions: {

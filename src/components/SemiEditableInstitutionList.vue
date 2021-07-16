@@ -30,9 +30,33 @@
                     {{institutionType[value]}}
                 </div>
             </template>
-            <template #cell(seats)="{value}">
+            <template #cell(studentSeats)="{item}">
                 <div>
-                    <b-input :value="value" ></b-input>
+
+                    <b-row>
+                        <b-col class="mt-2 mx-0 px-1" style="text-align:right;">
+                    {{item.studentSeatsUsed}} / 
+
+                        </b-col>
+                        <b-col class="ml-0 px-0 mr-4">
+                    <b-input style="4rem" :value="item.studentSeats" ></b-input>
+
+                        </b-col>
+                    </b-row>
+                </div>
+            </template>
+            <template #cell(teacherSeats)="{item}">
+                <div>
+                    <b-row>
+                        <b-col class="mt-2 mx-0 px-1" style="text-align:right;">
+                    {{item.teacherSeatsUsed}} / 
+
+                        </b-col>
+                        <b-col class="ml-0 px-0 mr-4">
+                    <b-input style="4rem" :value="item.teacherSeats" ></b-input>
+
+                        </b-col>
+                    </b-row>
                 </div>
             </template>
         </b-table>
@@ -51,8 +75,11 @@ import CSACard from './WrapperComponents/CSACard.vue';
         data() {
             return {
                 items: institutions.ArrayList.map(x => {
-                    x.seats = Math.round(Math.random() * 100);
-                    x.seatsUsed = Math.round(Math.random() * x.seats);
+                    x.teacherSeats = Math.round(Math.random() * 100);
+                    x.teacherSeatsUsed = Math.round(Math.random() * x.teacherSeats);
+
+                    x.studentSeats = Math.round(Math.random() * 100);
+                    x.studentSeatsUsed = Math.round(Math.random() * x.studentSeats);
                     return x;
                 }).slice(0, 5),
                 institutionFields: [
@@ -62,8 +89,9 @@ import CSACard from './WrapperComponents/CSACard.vue';
                     { key: 'city', label: 'City'},
                     { key: 'stateCode', label: 'State Code'},
                     { key: 'enrollment', label: 'Enrollment'},
-                    { key: 'seats', label: 'Seats'},
-                    { key: 'seatsUsed', label: 'Seats Used'},
+                    { key: 'studentSeats', label: 'Student Seats Used/Available'},
+                    { key: 'teacherSeats', label: 'Teacher Seats Used/Available'},
+                    // { key: 'seatsUsed', label: 'Seats Used'},
                 ],
                 institutionType: csaTypes.institutionTypeOptions
             }

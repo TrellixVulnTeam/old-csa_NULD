@@ -148,7 +148,7 @@ import csaTypes from '../misc/csaTypes';
         },
         data() {
             return {
-                institutionTypeOptions: Object.entries(csaTypes.institutionTypeOptions).map(x=> {return {text:x[0], value:[x[1]]}}),
+                institutionTypeOptions: csaTypes.institutionTypeOptions,
                 editMode: true,
                 countryOptions: [],
                 stateOptions: [],

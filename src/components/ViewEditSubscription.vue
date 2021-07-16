@@ -229,59 +229,6 @@
           </b-col>
 
       </b-row>
-
-      <b-row v-if="!isCreate">
-        <b-col class="border rounded-pill p-3 mt-2">
-          <p class=" " style="width: max-content">
-            <span class="ml-2" for="">Enabled: </span>
-            <b-icon
-              v-if="subscriptionData.ltiUserID"
-              variant="success"
-              icon="check-circle"
-            ></b-icon>
-            <b-icon v-else variant="danger" icon="x-circle"></b-icon>
-            LTI
-
-            <b-icon
-              v-if="subscriptionData.samlUserID"
-              variant="success"
-              icon="check-circle"
-            ></b-icon>
-            <b-icon v-else variant="danger" icon="x-circle"></b-icon>
-            SAML
-            <b-icon
-              v-if="subscriptionData.cleverID"
-              variant="success"
-              icon="check-circle"
-            ></b-icon>
-            <b-icon v-else variant="danger" icon="x-circle"></b-icon>
-            Clever
-            <b-icon
-              v-if="subscriptionData.isRosterEnabled"
-              variant="success"
-              icon="check-circle"
-            ></b-icon>
-            <b-icon v-else variant="danger" icon="x-circle"></b-icon> Roster
-          </p>
-          <b-col class="m-0 p-0">
-            <!-- <b-form-group
-                            class="m-0"
-                              label="Enabled: "
-                              label-cols="auto"
-                              v-slot="{ ariaDescribedby }"
-                            >
-                              <b-form-checkbox-group
-                                :value="[userData.isRosterEnabled, userData.cleverID, userData.samlUserID, userData.isRosterEnabled, userData.ltiUserID]"
-                                :options="[{text: 'LTI', value: 'isRosterEnabled'}, {text: 'SAML', value:'samlUserID'}, {text: 'Clever', value:'cleverID'}, {text: 'Roster', value:'isRosterEnabled'}]"
-                                :aria-describedby="ariaDescribedby"
-                                switches
-                                disabled
-                              ></b-form-checkbox-group>
-                            </b-form-group> -->
-          </b-col>
-        </b-col>
-      </b-row>
-
         <b-row class="mt-2" v-if="!isCreate">
             <b-col>
                 <b-alert :show="!subscriptionData.isActive" variant="danger">
