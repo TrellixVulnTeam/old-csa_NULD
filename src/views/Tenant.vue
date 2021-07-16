@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-100 h-100">
         <SideTab
             @on-collapse="recieved"
             :umbrellaId="10142"
@@ -27,73 +27,89 @@
         <div class="ml-tab-x mr-4" :class="tabClosed ? 'ml-4' : 'ml-tab-x'">
             <div>
                 <div>
-                    <h1 class="display-4">
-                        Umbrella
-                    </h1>
+                    <h1 class="display-4">Umbrella</h1>
                     <CSACard
                         title=""
-                        class="w-100 shadow-none h-vh mb-5"
+                        class="w-100 shadow-none"
+                        style="max-height: 85vh; height: 85vh !important"
                         :bodyVisible="true"
                         :hideCaret="true"
                     >
                         <template #card-body>
                             <div>
                                 <div>
-                                <h3 class="text-secondary mb-4">
-                                    Parent Institution: SAN LUIS COASTAL UNIF
-                                    SCH DIST
-                                </h3>
+                                    <h3 class="text-secondary mb-4">
+                                        Parent Institution: SAN LUIS COASTAL
+                                        UNIF SCH DIST
+                                    </h3>
                                     <div class="w-100 h-100 bg-white"></div>
 
                                     <b-tabs content-class="mt-3" align="center">
-                                        <b-tab title="Umbrella Settings"
-                                            >
+                                        <b-tab title="Umbrella Profile" active>
                                             <template #title>
                                                 <font-awesome-icon
                                                     class="text-black h3"
-                                                    icon="cog"
+                                                    icon="home"
                                                 ></font-awesome-icon
-                                                ><span class="ml-2">Umbrella Settings</span>
+                                                ><span class="ml-2"
+                                                    >Umbrella Profile</span
+                                                >
                                             </template>
                                             <ViewEditTenant
                                                 :tenantData="tenantData"
                                             ></ViewEditTenant
                                         ></b-tab>
-                                        <b-tab active>
+                                        <b-tab>
                                             <template #title>
                                                 <font-awesome-icon
                                                     class="text-green h3"
                                                     icon="school"
                                                 ></font-awesome-icon
-                                                ><span class="ml-2">Institutions Hierarchy (30)</span>
+                                                ><span class="ml-2"
+                                                    >Institutions (30)</span
+                                                >
                                             </template>
                                             <InstitutionHierarchy></InstitutionHierarchy>
-                                            <b-button class="my-4" variant="success">Create New Institution</b-button>
-                                        </b-tab>
-                                        <b-tab
+                                            <b-button
+                                                class="my-4"
+                                                variant="success"
+                                                >Create New
+                                                Institution</b-button
                                             >
-                                            <template #title>
-                                        <font-awesome-icon
-                                            class="text-orange h3"
-                                            icon="users"
-                                        ></font-awesome-icon>
-                                            <span class="ml-2">Users (1000)</span>
-                                            </template><UserList></UserList
-                                        >
-                                            <b-button class="my-4" variant="success">Create New User</b-button>
                                         </b-tab>
-                                        <b-tab 
-                                            >
+                                        <b-tab>
                                             <template #title>
-                                        <font-awesome-icon
-                                            class="text-purple h3"
-                                            icon="book-reader"
-                                        ></font-awesome-icon>
-                                                <span class="ml-2">Subscriptions (9)</span>
+                                                <font-awesome-icon
+                                                    class="text-orange h3"
+                                                    icon="users"
+                                                ></font-awesome-icon>
+                                                <span class="ml-2"
+                                                    >Users (1000)</span
+                                                > </template
+                                            ><UserList></UserList>
+                                            <b-button
+                                                class="my-4"
+                                                variant="success"
+                                                >Create New User</b-button
+                                            >
+                                        </b-tab>
+                                        <b-tab>
+                                            <template #title>
+                                                <font-awesome-icon
+                                                    class="text-purple h3"
+                                                    icon="book-reader"
+                                                ></font-awesome-icon>
+                                                <span class="ml-2"
+                                                    >Subscriptions (9)</span
+                                                >
                                             </template>
                                             <Subscriptionlist></Subscriptionlist>
-                                            <b-button class="my-4" variant="success">Create New Subscription</b-button>
-
+                                            <b-button
+                                                class="my-4"
+                                                variant="success"
+                                                >Create New
+                                                Subscription</b-button
+                                            >
                                         </b-tab>
                                     </b-tabs>
                                     <!-- <CSACard class="mt-5" title="Institution Hierarchy" bodyVisible hideCaret>
@@ -112,7 +128,7 @@
                         </template>
                     </CSACard>
                 </div>
-                <b-col cols="3">
+                <!-- <b-col cols="3">
                     <CSACard
                         title="Quick Access Actions"
                         bodyVisible
@@ -153,7 +169,7 @@
                             </b-container>
                         </template>
                     </CSACard>
-                </b-col>
+                </b-col> -->
             </div>
             <!-- <b-row >
         <b-col>
@@ -181,70 +197,81 @@
 </template>
 
 <script>
-import CSACard from "../components/WrapperComponents/CSACard.vue";
-import SideTab from "../components/SideTab.vue";
-import ViewEditTenant from "../components/ViewEditTenant.vue";
-import InstitutionHierarchy from "./institutionHierarchy/institutionHierarchy.vue";
-import UserList from "../components/UserList.vue";
-import Subscriptionlist from "../components/Subscriptionlist.vue";
-export default {
-    components: {
-        ViewEditTenant,
-        CSACard,
-        SideTab,
-        InstitutionHierarchy,
-        UserList,
-        Subscriptionlist,
-    },
-    data() {
-        return {
-            tabClosed: false,
-            tenantData: {
-                Tenant: {
-                    tenantID: 1239149,
-                    mainInstitutionID: 2498,
-                    mainInstitutionName: "SAN LUIS COASTAL UNIF SCH DIST",
-                    mainSalesforceAccountID: null,
-                    isCustom: false,
-                    isSSOLTIEnabled: false,
-                    isSSOSamlEnabled: false,
-                    isRosterEnabled: true,
-                    timeOffset: -480,
-                    timezoneID: null,
-                    changeLocked: false,
-                    classesCap: 0,
-                    studentCap: 0,
-                },
-            }.Tenant,
-        };
-    },
-    methods: {
-        recieved(e) {
-            console.log("received");
-            console.log(e);
-            this.tabClosed = !this.tabClosed;
+    import CSACard from "../components/WrapperComponents/CSACard.vue";
+    import SideTab from "../components/SideTab.vue";
+    import ViewEditTenant from "../components/ViewEditTenant.vue";
+    import InstitutionHierarchy from "./institutionHierarchy/institutionHierarchy.vue";
+    import UserList from "../components/UserList.vue";
+    import Subscriptionlist from "../components/Subscriptionlist.vue";
+    export default {
+        components: {
+            ViewEditTenant,
+            CSACard,
+            SideTab,
+            InstitutionHierarchy,
+            UserList,
+            Subscriptionlist,
         },
-    },
-};
+        data() {
+            return {
+                tabClosed: false,
+                tenantData: {
+                    Tenant: {
+                        tenantID: 1239149,
+                        mainInstitutionID: 2498,
+                        institutionTypeID: 2,
+                        parentInstitutionID: 0,
+                        parentInstitutionName: null,
+                        mainInstitutionName: "SAN LUIS COASTAL UNIF SCH DIST",
+                        mainSalesforceAccountID: null,
+                        stateCode: "CA",
+                        countryCode: "USA",
+                        postalCode: "93401",
+                        city: "SN LUIS OBISP",
+                        isCustom: false,
+                        isSSOLTIEnabled: false,
+                        isSSOSamlEnabled: false,
+                        isRosterEnabled: true,
+                        timeOffset: -480,
+                        timezoneID: null,
+                        changeLocked: false,
+                        classesCap: 0,
+                        studentCap: 0,
+                        subCount: 0,
+                        pid: "121070",
+                        salesforceAccountID: "H4325KJ425S6432K",
+                        defaultSeatCap: 500,
+                    },
+                }.Tenant,
+            };
+        },
+        methods: {
+            recieved(e) {
+                console.log("received");
+                console.log(e);
+                this.tabClosed = !this.tabClosed;
+            },
+        },
+    };
 </script>
 
 <style lang="scss" scoped>
-@import "../app.scss";
+    @import "../app.scss";
 
-.ml-tab {
-    margin-left: $navBarWidth;
-    // margin-left: 370px;
-}
-.ml-tab-x {
-    margin-left: $navBarWidth + 20px;
-}
-.barpadding {
-    margin-top: 100px !important;
-}
-div#sidebar-1 {
-    margin-top: 85px !important;
-}
-.h-vh {
-    height: 100vh;
-}
+    .ml-tab {
+        margin-left: $navBarWidth;
+        // margin-left: 370px;
+    }
+    .ml-tab-x {
+        margin-left: $navBarWidth + 20px;
+    }
+    .barpadding {
+        margin-top: 100px !important;
+    }
+    div#sidebar-1 {
+        margin-top: 85px !important;
+    }
+    .h-vh {
+        height: 100vh;
+    }
 </style>

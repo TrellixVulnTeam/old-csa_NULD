@@ -1,5 +1,5 @@
 <template>
-    <div id="nav" class="mx-0 mt-0 px-0 pt-0" style="margin-top: 0; z-index: 1">
+    <div id="nav" class="m-0 p-0" style="height: 100px; z-index: 1">
         <b-navbar
             style="height: 85px"
             class="m-0 shadow"
@@ -14,7 +14,6 @@
             <b-navbar-toggle target="nav-collapse" v-if="jti"></b-navbar-toggle>
 
             <b-collapse id="nav-collapse" is-nav v-if="jti">
-
                 <b-navbar-nav>
                     <b-nav-item
                         v-for="(item, index) in items"
@@ -228,7 +227,7 @@
     };
 </script>
 <style lang="scss" >
-.active-nav > a {
-    color: #f78c00 !important;
-}
+    .active-nav > a {
+        color: #f78c00 !important;
+    }
 </style>

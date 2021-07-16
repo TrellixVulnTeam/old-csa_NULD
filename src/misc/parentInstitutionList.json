@@ -1,0 +1,121 @@
+[
+	{
+		"institutionName": "BAYWOOD ELEMENTARY SCHOOL",
+		"institutionID": 68294,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "BELLEVUE-SANTA FE CHARTER SCH",
+		"institutionID": 68287,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "BISHOP'S PEAK ELEM SCHOOL",
+		"institutionID": 68292,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "CONRAD L SMITH ELEMENTARY SCH",
+		"institutionID": 68288,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "DEL MAR ELEMENTARY SCHOOL",
+		"institutionID": 68305,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "HAWTHORNE ELEMENTARY SCHOOL",
+		"institutionID": 68289,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "LAGUNA MIDDLE SCHOOL",
+		"institutionID": 68279,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "LOS OSOS MIDDLE SCHOOL",
+		"institutionID": 68295,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "LOS RANCHOS ELEMENTARY SCHOOL",
+		"institutionID": 68290,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "MONARCH GROVE ELEM SCHOOL",
+		"institutionID": 68306,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "MORRO BAY HIGH SCHOOL",
+		"institutionID": 68280,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "PACHECO ELEMENTARY SCHOOL",
+		"institutionID": 68299,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "PACIFIC BEACH HIGH SCHOOL",
+		"institutionID": 68296,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "SAN LUIS COASTAL ADULT SCHOOL",
+		"institutionID": 68298,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "SAN LUIS OBISPO HIGH SCHOOL",
+		"institutionID": 2498,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "SINSHEIMER ELEMENTARY SCHOOL",
+		"institutionID": 68293,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	},
+	{
+		"institutionName": "TEACH ELEMENTARY SCHOOL",
+		"institutionID": 68291,
+		"city": "City",
+		"state": "VA",
+		"zipcode": 12345
+	}
+]
